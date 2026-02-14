@@ -1,1 +1,1334 @@
-{}
+{
+  "DJI_20250405090025_0008_V_121zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "nb_tiles": 48,
+    "nb_matching_tiles": 33,
+    "nb_species": 7,
+    "predictions": [
+      {
+        "species_name": "Coccoloba paraensis",
+        "gbif_id": "4036758",
+        "confidence": 0.1561,
+        "organ": "habit",
+        "bbox": {
+          "left": 0,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "confidence": 0.7248,
+        "organ": "fruit",
+        "bbox": {
+          "left": 518,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Iryanthera paraensis",
+        "gbif_id": "3743809",
+        "confidence": 0.2812,
+        "organ": "flower",
+        "bbox": {
+          "left": 1036,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cordia ucayaliensis",
+        "gbif_id": "5660461",
+        "confidence": 0.3983,
+        "organ": "habit",
+        "bbox": {
+          "left": 2072,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.3088,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "confidence": 0.3971,
+        "organ": "flower",
+        "bbox": {
+          "left": 3626,
+          "top": 0,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "confidence": 0.2709,
+        "organ": "fruit",
+        "bbox": {
+          "left": 518,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.2926,
+        "organ": "leaf",
+        "bbox": {
+          "left": 1036,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "confidence": 0.131,
+        "organ": "fruit",
+        "bbox": {
+          "left": 2072,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Iryanthera paraensis",
+        "gbif_id": "3743809",
+        "confidence": 0.2284,
+        "organ": "habit",
+        "bbox": {
+          "left": 2590,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.4065,
+        "organ": "habit",
+        "bbox": {
+          "left": 3108,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Coccoloba paraensis",
+        "gbif_id": "4036758",
+        "confidence": 0.4186,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3626,
+          "top": 518,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "confidence": 0.4652,
+        "organ": "leaf",
+        "bbox": {
+          "left": 0,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Iryanthera paraensis",
+        "gbif_id": "3743809",
+        "confidence": 0.2642,
+        "organ": "leaf",
+        "bbox": {
+          "left": 518,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.1237,
+        "organ": "habit",
+        "bbox": {
+          "left": 1554,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cordia ucayaliensis",
+        "gbif_id": "5660461",
+        "confidence": 0.3188,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Iryanthera paraensis",
+        "gbif_id": "3743809",
+        "confidence": 0.1102,
+        "organ": "habit",
+        "bbox": {
+          "left": 0,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.4211,
+        "organ": "flower",
+        "bbox": {
+          "left": 518,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "confidence": 0.1374,
+        "organ": "bark",
+        "bbox": {
+          "left": 1036,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cordia ucayaliensis",
+        "gbif_id": "5660461",
+        "confidence": 0.1196,
+        "organ": "flower",
+        "bbox": {
+          "left": 1554,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.1797,
+        "organ": "habit",
+        "bbox": {
+          "left": 2072,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "confidence": 0.5775,
+        "organ": "fruit",
+        "bbox": {
+          "left": 2590,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Coccoloba paraensis",
+        "gbif_id": "4036758",
+        "confidence": 0.2255,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Dendrobangia boliviana",
+        "gbif_id": "3596663",
+        "confidence": 0.2418,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3626,
+          "top": 1554,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "confidence": 0.2468,
+        "organ": "habit",
+        "bbox": {
+          "left": 0,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "confidence": 0.1413,
+        "organ": "flower",
+        "bbox": {
+          "left": 2590,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "confidence": 0.1243,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "confidence": 0.4132,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3626,
+          "top": 2072,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "confidence": 0.5426,
+        "organ": "bark",
+        "bbox": {
+          "left": 518,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Cordia ucayaliensis",
+        "gbif_id": "5660461",
+        "confidence": 0.3213,
+        "organ": "flower",
+        "bbox": {
+          "left": 1036,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Dendrobangia boliviana",
+        "gbif_id": "3596663",
+        "confidence": 0.1389,
+        "organ": "flower",
+        "bbox": {
+          "left": 1554,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "confidence": 0.1149,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      }
+    ]
+  },
+  "DJI_20250405090425_0018_V_93zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "nb_tiles": 48,
+    "nb_matching_tiles": 30,
+    "nb_species": 7,
+    "predictions": [
+      {
+        "species_name": "Tachigali plumbea",
+        "gbif_id": "2945143",
+        "confidence": 0.7013,
+        "organ": "bark",
+        "bbox": {
+          "left": 0,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali plumbea",
+        "gbif_id": "2945143",
+        "confidence": 0.2521,
+        "organ": "leaf",
+        "bbox": {
+          "left": 1036,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "confidence": 0.2805,
+        "organ": "fruit",
+        "bbox": {
+          "left": 1554,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "confidence": 0.2902,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "confidence": 0.3553,
+        "organ": "habit",
+        "bbox": {
+          "left": 0,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "confidence": 0.2334,
+        "organ": "bark",
+        "bbox": {
+          "left": 1554,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Lacunaria crenata",
+        "gbif_id": "7919991",
+        "confidence": 0.2398,
+        "organ": "fruit",
+        "bbox": {
+          "left": 2072,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "confidence": 0.1824,
+        "organ": "leaf",
+        "bbox": {
+          "left": 2590,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Swartzia lamellata",
+        "gbif_id": "5351920",
+        "confidence": 0.4383,
+        "organ": "flower",
+        "bbox": {
+          "left": 3626,
+          "top": 518,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Lacunaria crenata",
+        "gbif_id": "7919991",
+        "confidence": 0.304,
+        "organ": "leaf",
+        "bbox": {
+          "left": 518,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "confidence": 0.1877,
+        "organ": "flower",
+        "bbox": {
+          "left": 1036,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Lacunaria crenata",
+        "gbif_id": "7919991",
+        "confidence": 0.4741,
+        "organ": "fruit",
+        "bbox": {
+          "left": 1554,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "confidence": 0.1705,
+        "organ": "bark",
+        "bbox": {
+          "left": 2072,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali plumbea",
+        "gbif_id": "2945143",
+        "confidence": 0.2974,
+        "organ": "habit",
+        "bbox": {
+          "left": 2590,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Licaria vernicosa",
+        "gbif_id": "4181954",
+        "confidence": 0.3628,
+        "organ": "bark",
+        "bbox": {
+          "left": 3108,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali plumbea",
+        "gbif_id": "2945143",
+        "confidence": 0.3425,
+        "organ": "bark",
+        "bbox": {
+          "left": 3626,
+          "top": 1036,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "confidence": 0.4403,
+        "organ": "leaf",
+        "bbox": {
+          "left": 518,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Licaria vernicosa",
+        "gbif_id": "4181954",
+        "confidence": 0.3412,
+        "organ": "habit",
+        "bbox": {
+          "left": 0,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "confidence": 0.5122,
+        "organ": "flower",
+        "bbox": {
+          "left": 518,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "confidence": 0.2365,
+        "organ": "flower",
+        "bbox": {
+          "left": 1554,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "confidence": 0.1298,
+        "organ": "fruit",
+        "bbox": {
+          "left": 2590,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Aiouea myristicoides",
+        "gbif_id": "4183431",
+        "confidence": 0.2679,
+        "organ": "habit",
+        "bbox": {
+          "left": 3108,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Swartzia lamellata",
+        "gbif_id": "5351920",
+        "confidence": 0.3352,
+        "organ": "fruit",
+        "bbox": {
+          "left": 0,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "confidence": 0.2841,
+        "organ": "fruit",
+        "bbox": {
+          "left": 518,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Swartzia lamellata",
+        "gbif_id": "5351920",
+        "confidence": 0.5237,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3108,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Tachigali plumbea",
+        "gbif_id": "2945143",
+        "confidence": 0.2768,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3626,
+          "top": 2590,
+          "width": 374,
+          "height": 410
+        }
+      }
+    ]
+  },
+  "DJI_20250405090640_0024_V_57zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "nb_tiles": 48,
+    "nb_matching_tiles": 33,
+    "nb_species": 8,
+    "predictions": [
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "confidence": 0.3647,
+        "organ": "bark",
+        "bbox": {
+          "left": 518,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cedrela odorata",
+        "gbif_id": "3190511",
+        "confidence": 0.1073,
+        "organ": "flower",
+        "bbox": {
+          "left": 1554,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "confidence": 0.1825,
+        "organ": "bark",
+        "bbox": {
+          "left": 2590,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Psychotria viridis",
+        "gbif_id": "2921300",
+        "confidence": 0.6786,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali amplifolia",
+        "gbif_id": "3932375",
+        "confidence": 0.3961,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3626,
+          "top": 0,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Brosimum utile",
+        "gbif_id": "8042591",
+        "confidence": 0.3219,
+        "organ": "flower",
+        "bbox": {
+          "left": 518,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Brosimum utile",
+        "gbif_id": "8042591",
+        "confidence": 0.2456,
+        "organ": "bark",
+        "bbox": {
+          "left": 1036,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Brosimum utile",
+        "gbif_id": "8042591",
+        "confidence": 0.152,
+        "organ": "leaf",
+        "bbox": {
+          "left": 2072,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Jacaranda copaia",
+        "gbif_id": "7298763",
+        "confidence": 0.3785,
+        "organ": "habit",
+        "bbox": {
+          "left": 0,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Brosimum utile",
+        "gbif_id": "8042591",
+        "confidence": 0.322,
+        "organ": "bark",
+        "bbox": {
+          "left": 1036,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Anaxagorea brevipes",
+        "gbif_id": "3156884",
+        "confidence": 0.2936,
+        "organ": "flower",
+        "bbox": {
+          "left": 1554,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Brosimum utile",
+        "gbif_id": "8042591",
+        "confidence": 0.3045,
+        "organ": "leaf",
+        "bbox": {
+          "left": 2072,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cedrela odorata",
+        "gbif_id": "3190511",
+        "confidence": 0.1211,
+        "organ": "habit",
+        "bbox": {
+          "left": 3626,
+          "top": 1036,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "confidence": 0.1763,
+        "organ": "leaf",
+        "bbox": {
+          "left": 0,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hydrochorea corymbosa",
+        "gbif_id": "2977475",
+        "confidence": 0.43,
+        "organ": "flower",
+        "bbox": {
+          "left": 1036,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Jacaranda copaia",
+        "gbif_id": "7298763",
+        "confidence": 0.2974,
+        "organ": "fruit",
+        "bbox": {
+          "left": 1554,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Jacaranda copaia",
+        "gbif_id": "7298763",
+        "confidence": 0.1765,
+        "organ": "fruit",
+        "bbox": {
+          "left": 2072,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cedrela odorata",
+        "gbif_id": "3190511",
+        "confidence": 0.4209,
+        "organ": "habit",
+        "bbox": {
+          "left": 2590,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "confidence": 0.2465,
+        "organ": "leaf",
+        "bbox": {
+          "left": 3108,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali amplifolia",
+        "gbif_id": "3932375",
+        "confidence": 0.3242,
+        "organ": "flower",
+        "bbox": {
+          "left": 3626,
+          "top": 1554,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Cedrela odorata",
+        "gbif_id": "3190511",
+        "confidence": 0.3361,
+        "organ": "flower",
+        "bbox": {
+          "left": 518,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Hydrochorea corymbosa",
+        "gbif_id": "2977475",
+        "confidence": 0.3414,
+        "organ": "fruit",
+        "bbox": {
+          "left": 1554,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Psychotria viridis",
+        "gbif_id": "2921300",
+        "confidence": 0.3945,
+        "organ": "leaf",
+        "bbox": {
+          "left": 2072,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali amplifolia",
+        "gbif_id": "3932375",
+        "confidence": 0.707,
+        "organ": "habit",
+        "bbox": {
+          "left": 2590,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Jacaranda copaia",
+        "gbif_id": "7298763",
+        "confidence": 0.1336,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3108,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Tachigali amplifolia",
+        "gbif_id": "3932375",
+        "confidence": 0.5422,
+        "organ": "flower",
+        "bbox": {
+          "left": 0,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "confidence": 0.1988,
+        "organ": "habit",
+        "bbox": {
+          "left": 518,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "confidence": 0.2001,
+        "organ": "habit",
+        "bbox": {
+          "left": 1036,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Jacaranda copaia",
+        "gbif_id": "7298763",
+        "confidence": 0.1052,
+        "organ": "leaf",
+        "bbox": {
+          "left": 1554,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Hydrochorea corymbosa",
+        "gbif_id": "2977475",
+        "confidence": 0.4884,
+        "organ": "habit",
+        "bbox": {
+          "left": 2072,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Tachigali amplifolia",
+        "gbif_id": "3932375",
+        "confidence": 0.174,
+        "organ": "fruit",
+        "bbox": {
+          "left": 2590,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Psychotria viridis",
+        "gbif_id": "2921300",
+        "confidence": 0.2542,
+        "organ": "bark",
+        "bbox": {
+          "left": 3626,
+          "top": 2590,
+          "width": 374,
+          "height": 410
+        }
+      }
+    ]
+  },
+  "DJI_20250405093923_0002_V_90zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "nb_tiles": 48,
+    "nb_matching_tiles": 26,
+    "nb_species": 8,
+    "predictions": [
+      {
+        "species_name": "Dacryodes roraimensis",
+        "gbif_id": "3993746",
+        "confidence": 0.3042,
+        "organ": "flower",
+        "bbox": {
+          "left": 0,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "confidence": 0.3697,
+        "organ": "habit",
+        "bbox": {
+          "left": 518,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Zygia ampla",
+        "gbif_id": "5347398",
+        "confidence": 0.2829,
+        "organ": "leaf",
+        "bbox": {
+          "left": 1554,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Paypayrola guianensis",
+        "gbif_id": "4074325",
+        "confidence": 0.7358,
+        "organ": "flower",
+        "bbox": {
+          "left": 2590,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "confidence": 0.2416,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3108,
+          "top": 0,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Eugenia biflora",
+        "gbif_id": "5417812",
+        "confidence": 0.618,
+        "organ": "flower",
+        "bbox": {
+          "left": 1036,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ocotea glomerata",
+        "gbif_id": "7304589",
+        "confidence": 0.3028,
+        "organ": "habit",
+        "bbox": {
+          "left": 2072,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Zygia ampla",
+        "gbif_id": "5347398",
+        "confidence": 0.1747,
+        "organ": "fruit",
+        "bbox": {
+          "left": 3108,
+          "top": 518,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "confidence": 0.3953,
+        "organ": "leaf",
+        "bbox": {
+          "left": 1554,
+          "top": 1036,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Caryocar pallidum",
+        "gbif_id": "3826012",
+        "confidence": 0.2167,
+        "organ": "bark",
+        "bbox": {
+          "left": 518,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ocotea glomerata",
+        "gbif_id": "7304589",
+        "confidence": 0.1842,
+        "organ": "leaf",
+        "bbox": {
+          "left": 1036,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "confidence": 0.1345,
+        "organ": "habit",
+        "bbox": {
+          "left": 2072,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Dacryodes roraimensis",
+        "gbif_id": "3993746",
+        "confidence": 0.378,
+        "organ": "flower",
+        "bbox": {
+          "left": 2590,
+          "top": 1554,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "confidence": 0.6618,
+        "organ": "leaf",
+        "bbox": {
+          "left": 2072,
+          "top": 2072,
+          "width": 518,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Paypayrola guianensis",
+        "gbif_id": "4074325",
+        "confidence": 0.1054,
+        "organ": "flower",
+        "bbox": {
+          "left": 3626,
+          "top": 2072,
+          "width": 374,
+          "height": 518
+        }
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "confidence": 0.1988,
+        "organ": "fruit",
+        "bbox": {
+          "left": 0,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Caryocar pallidum",
+        "gbif_id": "3826012",
+        "confidence": 0.3499,
+        "organ": "bark",
+        "bbox": {
+          "left": 1554,
+          "top": 2590,
+          "width": 518,
+          "height": 410
+        }
+      },
+      {
+        "species_name": "Sloanea durissima",
+        "gbif_id": "5651320",
+        "confidence": 0.6671,
+        "organ": "bark",
+        "bbox": {
+          "left": 3626,
+          "top": 2590,
+          "width": 374,
+          "height": 410
+        }
+      }
+    ]
+  }
+}
