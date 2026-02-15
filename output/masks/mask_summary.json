@@ -1,0 +1,360 @@
+{
+  "DJI_20250405090025_0008_V_121zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "species": [
+      {
+        "species_name": "Aniba permollis",
+        "gbif_id": "4180670",
+        "color_rgb": [
+          255,
+          0,
+          0
+        ],
+        "max_confidence": 0.5426,
+        "num_tiles": 6
+      },
+      {
+        "species_name": "Coccoloba paraensis",
+        "gbif_id": "4036758",
+        "color_rgb": [
+          255,
+          218,
+          0
+        ],
+        "max_confidence": 0.4186,
+        "num_tiles": 3
+      },
+      {
+        "species_name": "Cordia ucayaliensis",
+        "gbif_id": "5660461",
+        "color_rgb": [
+          72,
+          255,
+          0
+        ],
+        "max_confidence": 0.3983,
+        "num_tiles": 4
+      },
+      {
+        "species_name": "Dendrobangia boliviana",
+        "gbif_id": "3596663",
+        "color_rgb": [
+          0,
+          255,
+          145
+        ],
+        "max_confidence": 0.2418,
+        "num_tiles": 2
+      },
+      {
+        "species_name": "Hirtella arenosa",
+        "gbif_id": "2985153",
+        "color_rgb": [
+          0,
+          145,
+          255
+        ],
+        "max_confidence": 0.5775,
+        "num_tiles": 7
+      },
+      {
+        "species_name": "Iryanthera paraensis",
+        "gbif_id": "3743809",
+        "color_rgb": [
+          72,
+          0,
+          255
+        ],
+        "max_confidence": 0.2812,
+        "num_tiles": 4
+      },
+      {
+        "species_name": "Talisia clathrata",
+        "gbif_id": "7265178",
+        "color_rgb": [
+          255,
+          0,
+          218
+        ],
+        "max_confidence": 0.7248,
+        "num_tiles": 6
+      }
+    ],
+    "composite_mask_path": "output\\masks\\mask_images\\DJI_20250405090025_0008_V_121zoom.JPG\\composite.png"
+  },
+  "DJI_20250405090425_0018_V_93zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "species": [
+      {
+        "species_name": "Aiouea myristicoides",
+        "gbif_id": "4183431",
+        "color_rgb": [
+          255,
+          0,
+          0
+        ],
+        "max_confidence": 0.2679,
+        "num_tiles": 1
+      },
+      {
+        "species_name": "Duguetia megalocarpa",
+        "gbif_id": "3157596",
+        "color_rgb": [
+          255,
+          218,
+          0
+        ],
+        "max_confidence": 0.5122,
+        "num_tiles": 6
+      },
+      {
+        "species_name": "Lacunaria crenata",
+        "gbif_id": "7919991",
+        "color_rgb": [
+          72,
+          255,
+          0
+        ],
+        "max_confidence": 0.4741,
+        "num_tiles": 3
+      },
+      {
+        "species_name": "Licaria vernicosa",
+        "gbif_id": "4181954",
+        "color_rgb": [
+          0,
+          255,
+          145
+        ],
+        "max_confidence": 0.3628,
+        "num_tiles": 2
+      },
+      {
+        "species_name": "Pouteria campanulata",
+        "gbif_id": "2884358",
+        "color_rgb": [
+          0,
+          145,
+          255
+        ],
+        "max_confidence": 0.4403,
+        "num_tiles": 6
+      },
+      {
+        "species_name": "Swartzia lamellata",
+        "gbif_id": "5351920",
+        "color_rgb": [
+          72,
+          0,
+          255
+        ],
+        "max_confidence": 0.5237,
+        "num_tiles": 3
+      },
+      {
+        "species_name": "Tachigali plumbea",
+        "gbif_id": "2945143",
+        "color_rgb": [
+          255,
+          0,
+          218
+        ],
+        "max_confidence": 0.7013,
+        "num_tiles": 5
+      }
+    ],
+    "composite_mask_path": "output\\masks\\mask_images\\DJI_20250405090425_0018_V_93zoom.JPG\\composite.png"
+  },
+  "DJI_20250405090640_0024_V_57zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "species": [
+      {
+        "species_name": "Anaxagorea brevipes",
+        "gbif_id": "3156884",
+        "color_rgb": [
+          255,
+          0,
+          0
+        ],
+        "max_confidence": 0.2936,
+        "num_tiles": 1
+      },
+      {
+        "species_name": "Brosimum utile",
+        "gbif_id": "8042591",
+        "color_rgb": [
+          255,
+          191,
+          0
+        ],
+        "max_confidence": 0.322,
+        "num_tiles": 5
+      },
+      {
+        "species_name": "Cedrela odorata",
+        "gbif_id": "3190511",
+        "color_rgb": [
+          127,
+          255,
+          0
+        ],
+        "max_confidence": 0.4209,
+        "num_tiles": 4
+      },
+      {
+        "species_name": "Hydrochorea corymbosa",
+        "gbif_id": "2977475",
+        "color_rgb": [
+          0,
+          255,
+          63
+        ],
+        "max_confidence": 0.4884,
+        "num_tiles": 3
+      },
+      {
+        "species_name": "Jacaranda copaia",
+        "gbif_id": "7298763",
+        "color_rgb": [
+          0,
+          255,
+          255
+        ],
+        "max_confidence": 0.3785,
+        "num_tiles": 5
+      },
+      {
+        "species_name": "Phenakospermum guyannense",
+        "gbif_id": "2763146",
+        "color_rgb": [
+          0,
+          63,
+          255
+        ],
+        "max_confidence": 0.3647,
+        "num_tiles": 6
+      },
+      {
+        "species_name": "Psychotria viridis",
+        "gbif_id": "2921300",
+        "color_rgb": [
+          127,
+          0,
+          255
+        ],
+        "max_confidence": 0.6786,
+        "num_tiles": 3
+      },
+      {
+        "species_name": "Tachigali amplifolia",
+        "gbif_id": "3932375",
+        "color_rgb": [
+          255,
+          0,
+          191
+        ],
+        "max_confidence": 0.707,
+        "num_tiles": 5
+      }
+    ],
+    "composite_mask_path": "output\\masks\\mask_images\\DJI_20250405090640_0024_V_57zoom.JPG\\composite.png"
+  },
+  "DJI_20250405093923_0002_V_90zoom.JPG": {
+    "image_width": 4000,
+    "image_height": 3000,
+    "species": [
+      {
+        "species_name": "Caryocar pallidum",
+        "gbif_id": "3826012",
+        "color_rgb": [
+          255,
+          0,
+          0
+        ],
+        "max_confidence": 0.3499,
+        "num_tiles": 2
+      },
+      {
+        "species_name": "Dacryodes roraimensis",
+        "gbif_id": "3993746",
+        "color_rgb": [
+          255,
+          191,
+          0
+        ],
+        "max_confidence": 0.378,
+        "num_tiles": 2
+      },
+      {
+        "species_name": "Eugenia biflora",
+        "gbif_id": "5417812",
+        "color_rgb": [
+          127,
+          255,
+          0
+        ],
+        "max_confidence": 0.618,
+        "num_tiles": 1
+      },
+      {
+        "species_name": "Ixora brevifolia",
+        "gbif_id": "2905802",
+        "color_rgb": [
+          0,
+          255,
+          63
+        ],
+        "max_confidence": 0.6618,
+        "num_tiles": 6
+      },
+      {
+        "species_name": "Ocotea glomerata",
+        "gbif_id": "7304589",
+        "color_rgb": [
+          0,
+          255,
+          255
+        ],
+        "max_confidence": 0.3028,
+        "num_tiles": 2
+      },
+      {
+        "species_name": "Paypayrola guianensis",
+        "gbif_id": "4074325",
+        "color_rgb": [
+          0,
+          63,
+          255
+        ],
+        "max_confidence": 0.7358,
+        "num_tiles": 2
+      },
+      {
+        "species_name": "Sloanea durissima",
+        "gbif_id": "5651320",
+        "color_rgb": [
+          127,
+          0,
+          255
+        ],
+        "max_confidence": 0.6671,
+        "num_tiles": 1
+      },
+      {
+        "species_name": "Zygia ampla",
+        "gbif_id": "5347398",
+        "color_rgb": [
+          255,
+          0,
+          191
+        ],
+        "max_confidence": 0.2829,
+        "num_tiles": 2
+      }
+    ],
+    "composite_mask_path": "output\\masks\\mask_images\\DJI_20250405093923_0002_V_90zoom.JPG\\composite.png"
+  }
+}

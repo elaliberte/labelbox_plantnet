@@ -54,14 +54,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Two types of predictions are demonstrated:</p>
 <ol type="1">
 <li><strong>Single-species predictions:</strong> The most likely species is predicted for each tree in the image, and predictions are imported as single-label classification.</li>
-<li><strong>Multi-species predictions:</strong> The most likely species are predicted for each tree in the image, and predictions are imported as bounding boxes, each with single-label classification.</li>
+<li><strong>Multi-species predictions (boxes):</strong> The most likely species are predicted for each tree in the image, and predictions are imported as bounding boxes, each with single-label classification (and confidence scores).</li>
+<li><strong>Multi-species predictions (masks):</strong> The most likely species are predicted for each tree in the image, and predictions are imported as segmentation masks, each with single-label classification (but no confidence scores, since these do not seem to be imported in Labelbox).</li>
 </ol>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <ol type="1">
 <li>Clone this repo</li>
 <li>Create a virtual environment: <code>python -m venv .venv</code></li>
-<li>Activate it: <code>.venv\Scripts\activate</code> (Windows)</li>
+<li>Activate it: <code>.venv/scripts/activate</code></li>
 <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
 <li>Copy <code>.env.example</code> to <code>.env</code> and add your API keys</li>
 </ol>
