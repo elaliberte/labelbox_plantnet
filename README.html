@@ -51,12 +51,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="labelbox-plntnet-integration" class="level1">
 <h1>Labelbox × Pl@ntNet Integration</h1>
 <p>Integrating Pl@ntNet multi-species predictions (survey/plot API) as model predictions in Labelbox for model-assisted labeling of ultra high-resolution drone photos of tropical trees. This demo uses photos from the Brazilian Amazon.</p>
-<p>Two types of predictions are demonstrated:</p>
+<p>Three types of predictions are demonstrated:</p>
 <ol type="1">
 <li><strong>Single-species predictions:</strong> The most likely species is predicted for each tree in the image, and predictions are imported as single-label classification.</li>
 <li><strong>Multi-species predictions (boxes):</strong> The most likely species are predicted for each tree in the image, and predictions are imported as bounding boxes, each with single-label classification (and confidence scores).</li>
 <li><strong>Multi-species predictions (masks):</strong> The most likely species are predicted for each tree in the image, and predictions are imported as segmentation masks, each with single-label classification (but no confidence scores, since these do not seem to be imported in Labelbox).</li>
 </ol>
+<blockquote class="blockquote">
+<p>⚠️ <strong>Warning:</strong> For boxes and masks, this version currently uses mock Pl@ntNet API predictions, since I do not currently have API access for multi-species surveys (‘Plots’ feature).</p>
+</blockquote>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <ol type="1">

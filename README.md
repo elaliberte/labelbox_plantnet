@@ -10,6 +10,8 @@ Three types of predictions are demonstrated:
 2. **Multi-species predictions (boxes):** The most likely species are predicted for each tree in the image, and predictions are imported as bounding boxes, each with single-label classification (and confidence scores).
 3. **Multi-species predictions (masks):** The most likely species are predicted for each tree in the image, and predictions are imported as segmentation masks, each with single-label classification (but no confidence scores, since these do not seem to be imported in Labelbox).
 
+> ⚠️ **Warning:** For boxes and masks, this version currently uses mock Pl@ntNet API predictions, since I do not currently have API access for multi-species surveys ('Plots' feature).
+
 ## Setup
 1. Clone this repo
 2. Create a virtual environment: `python -m venv .venv`
