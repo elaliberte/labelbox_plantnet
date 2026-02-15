@@ -1,5 +1,9 @@
 # 🌿 Labelbox × Pl\@ntNet — Brazilian Amazon Trees
 
+| Boxes | Classification | Masks |
+|:---:|:---:|:---:|
+| ![Boxes](media/boxes.jpg) | ![Classification](media/class.jpg) | ![Masks](media/masks.jpg) |
+
 Integrating [Pl\@ntNet](https://plantnet.org/) multi-species predictions with [Labelbox](https://labelbox.com/) for model-assisted labelling of ultra high-resolution drone close-up photos of tropical trees (Brazilian Amazon).
 
 Three annotation workflows are demonstrated:
