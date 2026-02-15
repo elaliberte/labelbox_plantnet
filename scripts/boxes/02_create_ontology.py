@@ -17,8 +17,8 @@ from dotenv import load_dotenv
 
 # ─── Paths ───────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output")
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # up 2 levels: scripts/boxes/ -> scripts/ -> root
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output", "boxes")
 
 # Load .env
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))

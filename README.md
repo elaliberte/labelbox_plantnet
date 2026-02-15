@@ -1,8 +1,13 @@
 # Labelbox × Pl@ntNet Integration
 
 Integrating Pl@ntNet multi-species predictions (survey/plot API) as model 
-predictions (as bounding boxes) in Labelbox for model-assisted labeling of ultra high-resolution 
+predictions in Labelbox for model-assisted labeling of ultra high-resolution 
 drone photos of tropical trees. This demo uses photos from the Brazilian Amazon.
+
+Two types of predictions are demonstrated:
+
+1. **Single-species predictions:** The most likely species is predicted for each tree in the image, and predictions are imported as single-label classification.
+2. **Multi-species predictions:** The most likely species are predicted for each tree in the image, and predictions are imported as bounding boxes, each with single-label classification.
 
 ## Setup
 1. Clone this repo

@@ -27,10 +27,9 @@ from dotenv import load_dotenv
 
 # ─── Paths ───────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output")
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output", "boxes")
 IMAGES_DIR = os.path.join(PROJECT_ROOT, "images")
-os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Load .env
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))

@@ -1,0 +1,111 @@
+"""
+Step 2 (class): Create a CLASSIFICATION ontology in Labelbox.
+
+Unlike the boxes workflow, this ontology has NO bounding box tool.
+Instead, it has a top-level Radio classification where each image
+gets classified as one species.
+
+This matches the Pl@ntNet single-species identification API:
+  POST /v2/identify/xprize-final-trees
+"""
+
+import os
+import sys
+import json
+import traceback
+import labelbox as lb
+from dotenv import load_dotenv
+
+# --- Paths ---------------------------------------------------------------
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # up 2 levels
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output", "class")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+LABELBOX_API_KEY = os.getenv("LABELBOX_API_KEY")
+
+if not LABELBOX_API_KEY or LABELBOX_API_KEY == "your_labelbox_api_key_here":
+    print("ERROR: Please add your Labelbox API key to the .env file")
+    sys.exit(1)
+
+
+def main():
+    # --- Load species list ------------------------------------------------
+    species_path = os.path.join(OUTPUT_DIR, "species_raw.json")
+    if not os.path.exists(species_path):
+        print(f"ERROR: Species list not found at {species_path}")
+        print("Please run 01_fetch_species.py first.")
+        sys.exit(1)
+
+    with open(species_path, "r", encoding="utf-8") as f:
+        species_list = json.load(f)
+    print(f"Loaded {len(species_list)} species")
+
+    # --- Connect to Labelbox ----------------------------------------------
+    print("Connecting to Labelbox...")
+    client = lb.Client(api_key=LABELBOX_API_KEY)
+    print("Connected.")
+
+    # --- Build ontology ---------------------------------------------------
+    print("Building classification ontology...")
+
+    species_options = []
+    skipped = 0
+    for sp in species_list:
+        name = sp.get("scientificNameWithoutAuthor", "").strip()
+        gbif_id = str(sp.get("gbifId", "")).strip()
+
+        if not name or not gbif_id:
+            skipped += 1
+            continue
+
+        species_options.append(
+            lb.Option(
+                value=gbif_id,
+                label=name,
+            )
+        )
+
+    print(f"  {len(species_options)} species options created")
+    if skipped:
+        print(f"  {skipped} species skipped (missing name or GBIF ID)")
+
+    # Top-level Radio classification (NOT nested under a bounding box)
+    ontology_builder = lb.OntologyBuilder(
+        classifications=[
+            lb.Classification(
+                class_type=lb.Classification.Type.RADIO,
+                name="species",
+                options=species_options,
+            )
+        ]
+    )
+
+    print("Creating ontology in Labelbox...")
+    ontology = client.create_ontology(
+        "Brazilian Amazon Trees - Classification",
+        ontology_builder.asdict(),
+        media_type=lb.MediaType.Image,
+    )
+
+    print(f"\nOntology created!")
+    print(f"  Name: {ontology.name}")
+    print(f"  ID:   {ontology.uid}")
+    print(f"  URL:  https://app.labelbox.com/ontology/{ontology.uid}")
+
+    # Save ontology ID
+    ontology_id_path = os.path.join(OUTPUT_DIR, "ontology_id.txt")
+    with open(ontology_id_path, "w") as f:
+        f.write(ontology.uid)
+    print(f"  Saved ID to: {ontology_id_path}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        print(f"\n!!! UNCAUGHT ERROR !!!")
+        print(f"Type: {type(e).__name__}")
+        print(f"Message: {e}")
+        traceback.print_exc()

@@ -29,10 +29,10 @@ from dotenv import load_dotenv
 # --- Paths ---------------------------------------------------------------
 try:
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-    PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 except NameError:
     PROJECT_ROOT = r"c:\Users\etien\OneDrive\Documents\projets\labelbox_plantnet"
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output", "boxes")
 
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 LABELBOX_API_KEY = os.getenv("LABELBOX_API_KEY")
