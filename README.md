@@ -2,7 +2,7 @@
 
 | Boxes | Classification | Masks |
 |:---:|:---:|:---:|
-| ![Boxes](media/boxes.jpg) | ![Classification](media/class.jpg) | ![Masks](media/masks.jpg) |
+| <img src="media/boxes.jpg" alt="Boxes" height="180"/> | <img src="media/class.jpg" alt="Classification" height="180"/> | <img src="media/masks.jpg" alt="Masks" height="180"/> |
 
 Integrating [Pl\@ntNet](https://plantnet.org/) multi-species predictions with [Labelbox](https://labelbox.com/) for model-assisted labelling of ultra high-resolution drone close-up photos of tropical trees (Brazilian Amazon).
 
