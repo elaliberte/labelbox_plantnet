@@ -301,4 +301,4 @@ labelbox_plantnet/
 
 -   [Labelbox — Active learning](https://docs.labelbox.com/docs/active-learning)
 
--   [Labelbox — Limits (4K classes)](https://docs.labelbox.com/docs/limits)
+-   [Labelbox — Limits (4K classes)](https://docs.labelbox.com/docs/limits#schema)
