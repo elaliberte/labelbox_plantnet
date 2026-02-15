@@ -1,7 +1,6 @@
 """
 06_model_run.py – Upload segmentation mask predictions to Labelbox Model Run
-Uses Python annotation types (confidence on masks is not supported by Labelbox).
-Doesn't seem that useful since confidence on segmentation masks does not seem to be supported by Labelbox (despite what docs say).
+Uses Python annotation types (confidence on masks is not actually supported by Labelbox, despite what docs say).
 """
 
 import json
@@ -84,8 +83,8 @@ def main():
                         value=lb_types.Radio(
                             answer=lb_types.ClassificationAnswer(
                                 name=sp["species_name"],
-                                value=sp["gbif_id"],
                                 confidence=confidence,
+                                value=sp["gbif_id"]
                             )
                         ),
                     )

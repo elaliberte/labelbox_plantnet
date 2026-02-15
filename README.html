@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -48,33 +83,262 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="labelbox-plntnet-integration" class="level1">
-<h1>Labelbox × Pl@ntNet Integration</h1>
-<p>Integrating Pl@ntNet multi-species predictions (survey/plot API) as model predictions in Labelbox for model-assisted labeling of ultra high-resolution drone photos of tropical trees. This demo uses photos from the Brazilian Amazon.</p>
-<p>Three types of predictions are demonstrated:</p>
-<ol type="1">
-<li><strong>Single-species predictions:</strong> The most likely species is predicted for each tree in the image, and predictions are imported as single-label classification.</li>
-<li><strong>Multi-species predictions (boxes):</strong> The most likely species are predicted for each tree in the image, and predictions are imported as bounding boxes, each with single-label classification (and confidence scores).</li>
-<li><strong>Multi-species predictions (masks):</strong> The most likely species are predicted for each tree in the image, and predictions are imported as segmentation masks, each with single-label classification (but no confidence scores, since these do not seem to be imported in Labelbox).</li>
-</ol>
-<blockquote class="blockquote">
-<p>⚠️ <strong>Warning:</strong> For boxes and masks, this version currently uses mock Pl@ntNet API predictions, since I do not currently have API access for multi-species surveys (‘Plots’ feature).</p>
-</blockquote>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<ol type="1">
-<li>Clone this repo</li>
-<li>Create a virtual environment: <code>python -m venv .venv</code></li>
-<li>Activate it: <code>.venv/scripts/activate</code></li>
-<li>Install dependencies: <code>pip install -r requirements.txt</code></li>
-<li>Copy <code>.env.example</code> to <code>.env</code> and add your API keys</li>
-</ol>
-</section>
-<section id="flora-used" class="level2">
-<h2 class="anchored" data-anchor-id="flora-used">Flora used</h2>
+<section id="labelbox-plntnet-brazilian-amazon-trees" class="level1">
+<h1>🌿 Labelbox × Pl@ntNet — Brazilian Amazon Trees</h1>
+<p>Integrating <a href="https://plantnet.org/">Pl@ntNet</a> multi-species predictions with <a href="https://labelbox.com/">Labelbox</a> for model-assisted labelling of ultra high-resolution drone close-up photos of tropical trees (Brazilian Amazon).</p>
+<p>Three annotation workflows are demonstrated:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Workflow</th>
+<th>Annotation type</th>
+<th>Active learning?</th>
+<th>Script folder</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>📦 Bounding boxes</strong></td>
+<td><code>BBOX</code> + nested Radio</td>
+<td>✅ Yes (confidence works)</td>
+<td><code>scripts/boxes/</code></td>
+</tr>
+<tr class="even">
+<td>🎯 <strong>Classification</strong></td>
+<td>Global Radio</td>
+<td>✅ Yes (confidence works)</td>
+<td><code>scripts/class/</code></td>
+</tr>
+<tr class="odd">
+<td>🎭 <strong>Segmentation masks</strong></td>
+<td><code>RASTER_SEGMENTATION</code> + nested Radio</td>
+<td>⚠️ Confidence stored but UI filter broken</td>
+<td><code>scripts/masks/</code></td>
+</tr>
+</tbody>
+</table>
+<p>Pl@ntNet micro-project used: <a href="https://identify.plantnet.org/xprize-final-trees/species">Trees of the Brazilian Amazon</a> (~2 464 taxa).</p>
+<hr>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">💻 Prerequisites</h2>
 <ul>
-<li><strong>Pl@ntNet microproject:</strong> Trees of the Brazilian Amazon (<code>xprize-final-trees</code>)</li>
-<li>~2,464 tree species</li>
+<li><strong>Python 3.10+</strong> (tested with 3.13)</li>
+<li><strong>Git</strong> installed (<a href="https://git-scm.com/">git-scm.com</a>)</li>
+<li>A <strong>Pl@ntNet API key</strong> → <a href="https://my.plantnet.org/">my.plantnet.org</a></li>
+<li>A <strong>Labelbox API key</strong> → <a href="https://app.labelbox.com/">app.labelbox.com</a> → Settings → API Keys</li>
+</ul>
+<hr>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">⚙️ Setup</h2>
+<section id="clone-this-repo" class="level3">
+<h3 class="anchored" data-anchor-id="clone-this-repo">1. Clone this repo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>YOUR_USERNAME<span class="op">&gt;</span>/labelbox_plantnet.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> labelbox_plantnet</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-a-virtual-environment" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-virtual-environment">2. Create a virtual environment</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="activate-the-virtual-environment" class="level3">
+<h3 class="anchored" data-anchor-id="activate-the-virtual-environment">3. Activate the virtual environment</h3>
+<p><strong>Windows (Power Shell):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Windows (CMD):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>.venv\Scripts\activate.bat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>macOS / Linux:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="install-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="install-dependencies">4. Install dependencies</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="set-up-your-api-keys" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-your-api-keys">5. Set up your API keys</h3>
+<p>Copy the example file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span> .env.example .env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then open <code>.env</code> in a text editor and paste your real keys:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">PLANTNET_API_KEY</span><span class="op">=</span>your-plantnet-api-key-here</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">LABELBOX_API_KEY</span><span class="op">=</span>your-labelbox-api-key-here</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>⚠️ <strong>Never commit <code>.env</code></strong> — it is already in <code>.gitignore</code>.</p>
+</blockquote>
+</section>
+<section id="add-your-drone-images" class="level3">
+<h3 class="anchored" data-anchor-id="add-your-drone-images">6. Add your drone images</h3>
+<p>Place your <code>.JPG</code> drone photos in the <code>images/</code> folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">images/</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">DJI_20250405090025_0008_V_121zoom.JPG</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">DJI_20250405090425_0018_V_93zoom.JPG</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="how-to-run-step-by-step" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-run-step-by-step">🏃 How to run — step by step</h2>
+<p>All commands assume you are in the project root (<code>labelbox_plantnet/</code>) with the virtual environment activated.</p>
+<section id="step-1-fetch-species-list-from-plntnet" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-fetch-species-list-from-plntnet">🌱 Step 1 — Fetch species list from Pl@ntNet</h3>
+<p>Downloads the ~2 464 species (scientific names + GBIF IDs) from the “Trees of the Brazilian Amazon” micro-project.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/<span class="op">&lt;</span>workflow<span class="op">&gt;</span>01_fetch_plantnet_species.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output</strong>: <code>output/&lt;workflow&gt;/species_raw.json</code></p>
+</section>
+<section id="bounding-box-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="bounding-box-workflow">📦 Bounding box workflow</h3>
+<section id="step-2-create-the-labelbox-ontology" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-create-the-labelbox-ontology">Step 2 — Create the Labelbox ontology</h4>
+<p>Creates a <code>tree</code> bounding box tool with a nested <code>species</code> Radio classification (~2 464 options).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/boxes/02_create_ontology.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong> <code>output/boxes/ontology_id.txt</code></p>
+</section>
+<section id="step-3-create-the-labelbox-project-upload-images" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-create-the-labelbox-project-upload-images">Step 3 — Create the Labelbox project + upload images</h4>
+<p>Creates a dataset, uploads images, creates a project, and sends a batch.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/boxes/03_create_project.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong> <code>output/boxes/project_id.txt</code>, <code>output/boxes/dataset_id.txt</code></p>
+</section>
+<section id="step-4-generate-mock-plntnet-predictions" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-generate-mock-plntnet-predictions">Step 4 — Generate mock Pl@ntNet predictions</h4>
+<blockquote class="blockquote">
+<p>⚠️ Replace with actual predictions once you have Pl@ntNet API access for multi-species predictions.</p>
+</blockquote>
+<p>Simulates Pl@ntNet multi-species predictions (518×518 non-overlapping tiles) for each image.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/boxes/04_mock_predictions.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong> <code>output/boxes/plantnet_predictions.json</code></p>
+</section>
+<section id="step-5-import-predictions-as-mal-pre-labels" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-import-predictions-as-mal-pre-labels">Step 5 — Import predictions as MAL pre-labels</h4>
+<p>Imports bounding box predictions with nested species classifications into the Labelbox project as Model-Assisted Labeling (MAL) pre-labels.</p>
+<blockquote class="blockquote">
+<p>⚠️ <strong>Optional step:</strong> Useful for pre-labelling, but no confidence scores imported so cannot be used for active learning workflows. See next step.</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/boxes/05_mal_import.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-6-import-predictions-into-a-model-run" class="level4">
+<h4 class="anchored" data-anchor-id="step-6-import-predictions-into-a-model-run">Step 6 — Import predictions into a Model Run</h4>
+<p>Creates a Model + Model Run and uploads predictions with confidence scores for active learning.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/boxes/06_model_run.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="classification-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="classification-workflow">🎯 Classification workflow</h3>
+<section id="step-2-create-the-classification-ontology" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-create-the-classification-ontology">Step 2 — Create the classification ontology</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/class/02_create_ontology.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-3-create-the-project-upload-images" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-create-the-project-upload-images">Step 3 — Create the project + upload images</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/class/03_create_project.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-4-generate-mock-predictions" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-generate-mock-predictions">Step 4 — Generate mock predictions</h4>
+<blockquote class="blockquote">
+<p>⚠️ Replace with actual predictions once you have Pl@ntNet API access for multi-species predictions.</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/class/04_mock_predictions.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-5-import-predictions-into-a-model-run" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-import-predictions-into-a-model-run">Step 5 — Import predictions into a Model Run</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/class/05_model_run.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="segmentation-mask-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="segmentation-mask-workflow">🎭 Segmentation mask workflow</h3>
+<section id="step-2-create-the-segmentation-ontology" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-create-the-segmentation-ontology">Step 2 — Create the segmentation ontology</h4>
+<p>Creates a <code>Plant</code> raster segmentation tool with a nested <code>species</code> Radio classification.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/masks/02_create_ontology.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-3-create-the-project-upload-images-1" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-create-the-project-upload-images-1">Step 3 — Create the project + upload images</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/masks/03_create_project.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-4-generate-mock-predictions-1" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-generate-mock-predictions-1">Step 4 — Generate mock predictions</h4>
+<blockquote class="blockquote">
+<p>⚠️ Replace with actual predictions once you have Pl@ntNet API access for multi-species predictions.</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/masks/04_mock_predictions.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-5-build-composite-mask-images" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-build-composite-mask-images">Step 5 — Build composite mask images</h4>
+<p>Generates per-species binary masks and a composite mask image per photo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/masks/05_build_masks.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output:</strong> <code>output/masks/mask_images/&lt;image_name&gt;/composite.png</code> + per-species PNGs</p>
+</section>
+<section id="step-6-import-masks-into-a-model-run" class="level4">
+<h4 class="anchored" data-anchor-id="step-6-import-masks-into-a-model-run">Step 6 — Import masks into a Model Run</h4>
+<blockquote class="blockquote">
+<p>⚠️ <strong>Warning!</strong> Confidence scores do not get imported per segmentation mask, despite what the Labelbox documentation says.</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/masks/06_model_run.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+</section>
+<section id="project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure">🏗️ Project structure</h2>
+<pre><code>labelbox_plantnet/
+├── .env.example          # Template for API keys
+├── .env                  # Your actual API keys (git-ignored)
+├── .gitignore
+├── requirements.txt
+├── README.md
+├── images/               # Your drone photos
+│   └── *.JPG
+├── scripts/
+│   ├── boxes/
+│   │   ├── 01_fetch_plantnet_species.py
+│   │   ├── 02_create_ontology.py
+│   │   ├── 03_create_project.py
+│   │   ├── 04_plantnet_predict.py
+│   │   ├── 04b_mock_predictions.py
+│   │   ├── 05_import_predictions.py
+│   │   └── 06_model_run.py
+│   ├── class/
+│   │   ├── 01_fetch_plantnet_species.py
+│   │   ├── 02_create_ontology.py
+│   │   ├── 03_create_project.py
+│   │   ├── 04_plantnet_predict.py
+│   │   └── 05_model_run.py
+│   └── masks/
+│   │   ├── 01_fetch_plantnet_species.py
+│       ├── 02_create_ontology.py
+│       ├── 03_create_project.py
+│       ├── 04b_mock_predictions.py
+│       ├── 05_build_masks.py
+│       ├── 06_model_run.py
+│   │   └── 07_import_predictions.py
+└── output/               # Generated files
+    ├── boxes/
+    ├── class/
+    └── masks/</code></pre>
+<hr>
+</section>
+<section id="known-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="known-limitations">🚫 Known limitations</h2>
+<ul>
+<li><p><strong>Confidence threshold slider does not filter segmentation masks</strong> in the Labelbox Model Run gallery view. Confidence scores are stored correctly (visible in the Parsed view) but the UI slider has no effect on mask predictions. This works correctly for bounding boxes.</p></li>
+<li><p><strong>Max 4 000 classes per ontology</strong> — the 2 464 taxa from the Brazilian Amazon micro-project fits within this limit, but the full Pl@ntNet global flora (82K species) would not.</p></li>
+<li><p>The Labelbox docs show <code>confidence=0.5</code> inside <code>lb_types.Mask()</code>, but the <code>Mask</code> class has no <code>confidence</code> field. The correct placement is on <code>ObjectAnnotation(confidence=...)</code> <strong>and</strong> <code>ClassificationAnswer(confidence=...)</code>. Both parent and child nodes must have confidence or neither can. Despite this working for bounding boxes however, it does not work in Labelbox.</p></li>
+</ul>
+<hr>
+</section>
+<section id="useful-links" class="level2">
+<h2 class="anchored" data-anchor-id="useful-links">🔗 Useful links</h2>
+<ul>
+<li><p><a href="https://my.plantnet.org/doc/api/survey">Pl@ntNet API — Survey (multi-species)</a></p></li>
+<li><p><a href="https://docs.labelbox.com/docs/image-editor#set-up-an-ontology">Labelbox — Image editor &amp; ontology</a></p></li>
+<li><p><a href="https://docs.labelbox.com/reference/upload-image-predictions">Labelbox — Upload image predictions</a></p></li>
+<li><p><a href="https://docs.labelbox.com/docs/active-learning">Labelbox — Active learning</a></p></li>
+<li><p><a href="https://docs.labelbox.com/docs/limits">Labelbox — Limits (4K classes)</a></p></li>
 </ul>
 </section>
 </section>

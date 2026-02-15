@@ -170,7 +170,7 @@ def main():
                         value=lb_types.Radio(
                             answer=lb_types.ClassificationAnswer(
                                 name=option_name,
-                                confidence=confidence,
+                                confidence=confidence
                             )
                         ),
                     )

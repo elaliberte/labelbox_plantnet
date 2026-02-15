@@ -55,6 +55,7 @@ def main():
                 name="Plant",
                 value=lb_types.Mask(
                     mask=mask_data,
+                    confidence=confidence,
                     color=color,
                 ),
                 classifications=[
