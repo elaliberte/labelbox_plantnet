@@ -1,0 +1,17 @@
+{
+  "dataset_id": "cmlpcb0ex002j0738z3q7h6ud",
+  "dataset_name": "Brazilian Amazon Trees - Demo",
+  "num_images": 4,
+  "global_keys": [
+    "braz_amz_demoDJI_20250405090025_0008_V_121zoom.JPG",
+    "braz_amz_demoDJI_20250405090425_0018_V_93zoom.JPG",
+    "braz_amz_demoDJI_20250405090640_0024_V_57zoom.JPG",
+    "braz_amz_demoDJI_20250405093923_0002_V_90zoom.JPG"
+  ],
+  "filenames": [
+    "DJI_20250405090025_0008_V_121zoom.JPG",
+    "DJI_20250405090425_0018_V_93zoom.JPG",
+    "DJI_20250405090640_0024_V_57zoom.JPG",
+    "DJI_20250405093923_0002_V_90zoom.JPG"
+  ]
+}

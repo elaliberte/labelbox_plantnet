@@ -1,0 +1,12 @@
+{
+  "project_name": "Brazilian Amazon Trees - Boxes Demo",
+  "project_id": "cmlpfvfv104al07wc83ex7jij",
+  "model_run_id": "a9af7890-22d3-0114-296c-6a0e24415323",
+  "model_run_name": "run_2026-02-16_stride259_multiscale",
+  "batch_name": "batch_2026-02-16_141023",
+  "predictions_batch_name": "predictions_2026-02-16_141024",
+  "data_rows": 4,
+  "ontology_mapping_count": 2466,
+  "task_status": "COMPLETE",
+  "timestamp": "2026-02-16T14:10:29.907708"
+}

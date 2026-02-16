@@ -1,0 +1,181 @@
+{
+  "model_name": "Pl@ntNet Survey - Boxes",
+  "model_id": "a9af788f-7041-02a8-65dd-e293d46e68b2",
+  "model_run_name": "run_2026-02-16_stride259_multiscale",
+  "model_run_id": "a9af7890-22d3-0114-296c-6a0e24415323",
+  "ontology_id": "cmlpcxfv208zw07ul14l2hx5c",
+  "confidence_threshold": 0.05,
+  "total_images": 4,
+  "images_with_predictions": 4,
+  "total_boxes": 16,
+  "filtered_predictions": [
+    {
+      "global_key": "braz_amz_demoDJI_20250405090025_0008_V_121zoom.JPG",
+      "image": "DJI_20250405090025_0008_V_121zoom.JPG",
+      "boxes": [
+        {
+          "scientific_name": "Clusia nemorosa",
+          "gbif_id": "7330253",
+          "score": 0.61307,
+          "box_left": 1611,
+          "box_top": 2147,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Tapirira guianensis",
+          "gbif_id": "7321555",
+          "score": 0.06002,
+          "box_left": 834,
+          "box_top": 593,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Hymenopus heteromorphus",
+          "gbif_id": "10451142",
+          "score": 0.33596,
+          "box_left": 2776,
+          "box_top": 722,
+          "box_width": 1037,
+          "box_height": 1037
+        },
+        {
+          "scientific_name": "Symmeria paniculata",
+          "gbif_id": "7291273",
+          "score": 0.06982,
+          "box_left": 2129,
+          "box_top": 334,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Hymenopus macrophyllus",
+          "gbif_id": "10325594",
+          "score": 0.08301,
+          "box_left": 575,
+          "box_top": 75,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Roupala nitida",
+          "gbif_id": "3999332",
+          "score": 0.14981,
+          "box_left": 57,
+          "box_top": 593,
+          "box_width": 518,
+          "box_height": 518
+        }
+      ]
+    },
+    {
+      "global_key": "braz_amz_demoDJI_20250405090425_0018_V_93zoom.JPG",
+      "image": "DJI_20250405090425_0018_V_93zoom.JPG",
+      "boxes": [
+        {
+          "scientific_name": "Pterocarpus officinalis",
+          "gbif_id": "5349333",
+          "score": 0.05683,
+          "box_left": 2129,
+          "box_top": 1888,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Gliricidia sepium",
+          "gbif_id": "8082978",
+          "score": 0.0504,
+          "box_left": 2365,
+          "box_top": 1133,
+          "box_width": 733,
+          "box_height": 733
+        }
+      ]
+    },
+    {
+      "global_key": "braz_amz_demoDJI_20250405090640_0024_V_57zoom.JPG",
+      "image": "DJI_20250405090640_0024_V_57zoom.JPG",
+      "boxes": [
+        {
+          "scientific_name": "Bertholletia excelsa",
+          "gbif_id": "3083180",
+          "score": 0.05423,
+          "box_left": 1267,
+          "box_top": 401,
+          "box_width": 733,
+          "box_height": 733
+        },
+        {
+          "scientific_name": "Ficus americana",
+          "gbif_id": "5361926",
+          "score": 0.31737,
+          "box_left": 2647,
+          "box_top": 1370,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Chrysophyllum gonocarpum",
+          "gbif_id": "2885694",
+          "score": 0.16517,
+          "box_left": 3165,
+          "box_top": 1370,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Bellucia pentamera",
+          "gbif_id": "3866517",
+          "score": 0.16115,
+          "box_left": 3424,
+          "box_top": 75,
+          "box_width": 518,
+          "box_height": 518
+        },
+        {
+          "scientific_name": "Lacmellea edulis",
+          "gbif_id": "3618040",
+          "score": 0.05125,
+          "box_left": 3424,
+          "box_top": 1111,
+          "box_width": 518,
+          "box_height": 518
+        }
+      ]
+    },
+    {
+      "global_key": "braz_amz_demoDJI_20250405093923_0002_V_90zoom.JPG",
+      "image": "DJI_20250405093923_0002_V_90zoom.JPG",
+      "boxes": [
+        {
+          "scientific_name": "Hymenaea courbaril",
+          "gbif_id": "2950750",
+          "score": 0.6461,
+          "box_left": 704,
+          "box_top": 204,
+          "box_width": 1037,
+          "box_height": 1037
+        },
+        {
+          "scientific_name": "Dialium guianense",
+          "gbif_id": "2971008",
+          "score": 0.11255,
+          "box_left": 3097,
+          "box_top": 401,
+          "box_width": 733,
+          "box_height": 733
+        },
+        {
+          "scientific_name": "Hymenaea parvifolia",
+          "gbif_id": "2950771",
+          "score": 0.07125,
+          "box_left": 3424,
+          "box_top": 334,
+          "box_width": 518,
+          "box_height": 518
+        }
+      ]
+    }
+  ]
+}

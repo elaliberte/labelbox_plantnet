@@ -25,3 +25,6 @@ Thumbs.db
 # README extras
 README_files/
 README.html
+
+# Pl@ntNet predictions
+output/predictions

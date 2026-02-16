@@ -1,0 +1,102 @@
+# ─── config.yaml ─────────────────────────────────────────────────
+# Central configuration for the Labelbox x PlantNet pipeline.
+# Edit this file to change parameters without touching any script.
+
+# ─── PlantNet API ────────────────────────────────────────────────
+plantnet:
+  project: xprize-final-trees
+  project_name: Trees of the Brazilian Amazon
+  api_base: https://my-api.plantnet.org
+
+  # Species fetch (01_fetch_species.py)
+  species_page_size: 500
+
+  # Single-species identification (03a_single_predict.py)
+  single:
+    organs: auto
+    nb_results: 5
+    no_reject: true
+    include_related_images: false
+    lang: en
+
+  # Multi-species survey identification (03b_multi_predict.py)
+  survey:
+    tile_size: 518 # the default
+    tile_stride: 259 # the default
+    multi_scale: true
+    min_score: 0.005
+    max_rank: 1
+    show_species: true
+    show_genus: false
+    show_family: false
+
+# ─── Folders ─────────────────────────────────────────────────────
+folders:
+  images: images
+  output_species: output/species
+  output_predictions: output/predictions
+  output_boxes: output/boxes
+  output_class: output/class
+  output_masks: output/masks
+  output_images: output/images
+
+# ─── Labelbox ────────────────────────────────────────────────────
+labelbox:
+  # Tool name (shared across boxes and masks workflows)
+  tool_name: Plant
+  tool_color: '#00ff00'
+
+  # Classification (shared across boxes, masks, classification)
+  classification_name: Species
+  classification_instructions: Select the plant species.
+
+  # Dataset (shared across all projects — uploaded once)
+  dataset_name: Amazon Trees - Drone Images
+  dataset_description: Drone close-up photos of tropical trees from the Brazilian Amazon for the Labelbox x Pl@ntNet demo.
+
+  # Global key prefix (prepended to filenames to ensure uniqueness)
+  global_key_prefix: braz_amz_demo
+
+  # Ontology names (one per workflow)
+  ontology_name_boxes: Brazilian Amazon Trees - Boxes
+  ontology_name_class: Brazilian Amazon Trees - Classification
+  ontology_name_masks: Brazilian Amazon Trees - Segmentation
+
+  # Project names (one per workflow)
+  project_name_boxes: Brazilian Amazon Trees - Boxes Demo
+  project_description_boxes: Bounding box labeling of tropical tree species from drone photos (Brazilian Amazon). Pl@ntNet model-assisted labeling.
+
+  project_name_class: Brazilian Amazon Trees - Classification Demo
+  project_description_class: Global classification of tropical tree species from drone photos (Brazilian Amazon). Pl@ntNet model-assisted labeling.
+
+  project_name_masks: Brazilian Amazon Trees - Segmentation Demo
+  project_description_masks: Segmentation mask labeling of tropical tree species from drone photos (Brazilian Amazon). Pl@ntNet model-assisted labeling.
+
+  # ─── Model & Model Run (for importing predictions) ────────────
+  # Bounding box model
+  model_name_boxes: Pl@ntNet Survey - Boxes
+  model_description_boxes: >
+    Pl@ntNet survey/tiles endpoint predictions on drone images
+    of Brazilian Amazon trees. Project: xprize-final-trees.
+    Predictions imported as bounding boxes with nested species radio.
+  model_run_name_boxes: run_2026-02-16_stride259_multiscale
+
+  # ─── Bounding box prediction filtering ─────────────────────────
+  # Minimum confidence score to keep a prediction tile
+  confidence_threshold_boxes: 0.05
+
+  # Classification model
+  model_name_class: Pl@ntNet Survey - Classification
+  model_description_class: >
+    Pl@ntNet single-species endpoint predictions on drone images
+    of Brazilian Amazon trees. Project: xprize-final-trees.
+    Predictions imported as global radio classification.
+  model_run_name_class: run_2026-02-16_single
+
+  # Segmentation model
+  model_name_masks: Pl@ntNet Survey - Segmentation
+  model_description_masks: >
+    Pl@ntNet survey/tiles endpoint predictions on drone images
+    of Brazilian Amazon trees. Project: xprize-final-trees.
+    Predictions imported as segmentation masks with nested species radio.
+  model_run_name_masks: run_2026-02-16_stride259_multiscale

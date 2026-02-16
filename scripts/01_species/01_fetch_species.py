@@ -1,14 +1,15 @@
 """
-Step 1: Fetch the species list from the Pl@ntNet 
-"Trees of the Brazilian Amazon" microproject (xprize-final-trees).
+Step 1: Fetch the species list from a Pl@ntNet microproject.
 
 This script:
-1. Calls the Pl@ntNet API to get all ~2,464 species (paginated)
-2. Extracts: scientific name (without author), GBIF taxon ID, family, genus
-3. Saves the result as a CSV file in the output/ folder
+1. Reads the project slug and settings from config.yaml
+2. Calls the Pl@ntNet API to get all species (paginated)
+3. Extracts: scientific name (without author), GBIF taxon ID, family, genus
+4. Saves species_raw.json and species_list.csv to output/species/
+
+Run once — the species list is shared by all workflows (boxes, class, masks).
 
 Pl@ntNet pagination uses "page" and "pageSize" parameters.
-Both must be set together or pagination won't work.
 See: https://my.plantnet.org/doc/api/taxonomy
 """
 
@@ -17,15 +18,14 @@ import sys
 import json
 import csv
 import requests
+import yaml
 from dotenv import load_dotenv
 
-# ─── Fix paths: always relative to the PROJECT ROOT ─────────────
+# ─── Paths ───────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output", "boxes")
-os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Load .env from the project root
+# Load .env
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 PLANTNET_API_KEY = os.getenv("PLANTNET_API_KEY")
 
@@ -33,14 +33,28 @@ if not PLANTNET_API_KEY or PLANTNET_API_KEY == "your_plantnet_api_key_here":
     print("ERROR: Please add your Pl@ntNet API key to the .env file")
     sys.exit(1)
 
-# ─── Configuration ───────────────────────────────────────────────
-PROJECT = "xprize-final-trees"  # Trees of the Brazilian Amazon
-API_BASE = "https://my-api.plantnet.org"
+# ─── Load config ─────────────────────────────────────────────────
+config_path = os.path.join(PROJECT_ROOT, "config.yaml")
+if not os.path.exists(config_path):
+    print(f"ERROR: config.yaml not found at {config_path}")
+    sys.exit(1)
+
+with open(config_path, "r", encoding="utf-8") as f:
+    config = yaml.safe_load(f)
+
+PROJECT = config["plantnet"]["project"]
+PROJECT_NAME = config["plantnet"]["project_name"]
+API_BASE = config["plantnet"]["api_base"]
+PAGE_SIZE = config["plantnet"]["species_page_size"]
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, config["folders"]["output_species"])
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# ─── API URL ─────────────────────────────────────────────────────
 SPECIES_URL = f"{API_BASE}/v2/projects/{PROJECT}/species"
-PAGE_SIZE = 500  # Number of species per page
 
 # ─── Fetch ALL species using pagination ──────────────────────────
-print(f"Fetching species list for project: {PROJECT}")
+print(f"Project: {PROJECT_NAME} ({PROJECT})")
 print(f"URL: {SPECIES_URL}")
 print(f"Page size: {PAGE_SIZE}")
 print()
@@ -69,7 +83,6 @@ while True:
     if isinstance(page_data, list):
         page_species = page_data
     elif isinstance(page_data, dict):
-        # Try common keys just in case
         for key in ["species", "data", "results"]:
             if key in page_data:
                 page_species = page_data[key]
@@ -101,9 +114,6 @@ with open(raw_output_path, "w", encoding="utf-8") as f:
 print(f"Raw JSON saved to: {raw_output_path}")
 
 # ─── Extract relevant fields ────────────────────────────────────
-# Based on the Pl@ntNet API docs, each species object has:
-#   id, commonNames, scientificNameWithoutAuthor, 
-#   scientificNameAuthorship, gbifId, powoId, iucnCategory
 species_list = []
 
 for sp in all_raw_species:
@@ -112,7 +122,6 @@ for sp in all_raw_species:
         "author": sp.get("scientificNameAuthorship", ""),
         "gbif_id": sp.get("gbifId", ""),
         "plantnet_id": sp.get("id", ""),
-        "powo_id": sp.get("powoId", ""),
         "iucn_category": sp.get("iucnCategory", ""),
         "common_names": "; ".join(sp.get("commonNames", [])),
     }
@@ -125,7 +134,7 @@ species_list.sort(key=lambda x: x["scientific_name"])
 csv_output_path = os.path.join(OUTPUT_DIR, "species_list.csv")
 fieldnames = [
     "scientific_name", "author", "gbif_id", "plantnet_id",
-    "powo_id", "iucn_category", "common_names"
+    "iucn_category", "common_names"
 ]
 
 with open(csv_output_path, "w", newline="", encoding="utf-8") as f:
@@ -139,7 +148,6 @@ print(f"Species list saved to: {csv_output_path}")
 total = len(species_list)
 with_gbif = sum(1 for sp in species_list if sp["gbif_id"])
 without_gbif = total - with_gbif
-with_powo = sum(1 for sp in species_list if sp["powo_id"])
 
 print(f"\n{'='*50}")
 print(f"SPECIES LIST SUMMARY")
@@ -147,12 +155,11 @@ print(f"{'='*50}")
 print(f"Total species:          {total}")
 print(f"With GBIF taxon ID:     {with_gbif}")
 print(f"Without GBIF taxon ID:  {without_gbif}")
-print(f"With POWO ID:           {with_powo}")
 print(f"{'='*50}")
 
 # Show first 10 species as a preview
 print(f"\nFirst 10 species (preview):")
-print(f"{'Scientific Name':<40} {'GBIF ID':<12} {'POWO ID':<15}")
-print(f"{'-'*40} {'-'*12} {'-'*15}")
+print(f"{'Scientific Name':<40} {'GBIF ID':<12}")
+print(f"{'-'*40} {'-'*12}")
 for sp in species_list[:10]:
-    print(f"{sp['scientific_name']:<40} {str(sp['gbif_id']):<12} {sp['powo_id']:<15}")
+    print(f"{sp['scientific_name']:<40} {str(sp['gbif_id']):<12}")
