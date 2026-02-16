@@ -25,6 +25,8 @@ Three annotation workflows are demonstrated:
 
 Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.plantnet.org/xprize-final-trees/species) (\~2 464 taxa).
 
+[![Watch the demo of the bounding box workflow!](media/video.jpg)](https://youtu.be/sh1AkQxR9fE?si=nk8sy8tv-42oqY6W)
+
 ------------------------------------------------------------------------
 
 ## 💻 Prerequisites
@@ -292,7 +294,7 @@ labelbox_plantnet/
 ├── config.yaml               # Central pipeline configuration
 ├── requirements.txt
 ├── README.md
-├── images/                   # Your drone photos (git-ignored)
+├── images/                   # Your drone photos
 │   └── *.JPG
 ├── media/                    # Screenshots for README
 │   ├── class.jpg
@@ -318,7 +320,7 @@ labelbox_plantnet/
 │       ├── 04_create_ontology.py
 │       ├── 05_create_project.py
 │       └── 06_import_predictions.py
-└── output/                   # Generated files (git-ignored except .gitkeep)
+└── output/                   # Generated files
     ├── species/              # species_raw.json, species_list.csv
     ├── images/               # dataset_id.txt, upload_summary.json
     ├── predictions/          # single_predictions.json, multi_predictions.json
