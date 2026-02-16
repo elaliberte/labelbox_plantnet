@@ -132,7 +132,7 @@ python scripts/01_species/01_fetch_species.py
 
 ### 🖼️ Step 2 — Upload images to Labelbox
 
-Creates a Labelbox dataset and uploads all images from the images/ folder. This is a shared step — the same dataset is reused by all three workflows.
+Creates a Labelbox dataset and uploads all images from the `images/` folder. This is a shared step — the same dataset is reused by all three workflows.
 
 ``` bash
 python scripts/02_images/02_upload_images.py
