@@ -163,7 +163,7 @@ python scripts/03_predictions/03a_single_predict.py
 Runs the multi-species (i.e. survey) endpoint, which breaks each image into tiles and returns the best species prediction + confidence score for each tile. This is used in the Boxes and Masks workflows to create more granular annotations.
 
 ``` bash
-`python scripts/03_predictions/03b_multi_predict.py`
+python scripts/03_predictions/03b_multi_predict.py
 ```
 
 **Output**: `output/predictions/multi_predictions.json`
