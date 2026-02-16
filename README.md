@@ -1,4 +1,4 @@
-# 🌿 Labelbox × Pl\@ntNet integration - Demo
+# 🌿 Labelbox × Pl\@ntNet — Brazilian Amazon Trees
 
 <table>
   <tr>
@@ -13,15 +13,19 @@
   </tr>
 </table>
 
-Integrating [Pl\@ntNet](https://plantnet.org/) single or multi-species predictions with [Labelbox](https://labelbox.com/) for model-assisted labelling of ultra high-resolution drone close-up photos. Demonstration on tropical trees (Brazilian Amazon).
+Integrating [Pl\@ntNet](https://plantnet.org) multi-species predictions with [Labelbox](https://labelbox.com) for model-assisted labelling of ultra high-resolution drone close-up photos of tropical trees (Brazilian Amazon).
 
 Three annotation workflows are demonstrated:
 
-| Workflow | Annotation type | Active learning? | Script folder |
-|------------------|------------------|------------------|------------------|
-| 🎯 **Classification** | Global Radio | ✅ Yes (confidence works) | `scripts/04a_class/` |
-| **📦 Bounding boxes** | `BBOX` + nested Radio | ✅ Yes (confidence works) | `scripts/04b_boxes/` |
-| 🎭 **Segmentation masks** | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken | `scripts/04c_masks/` |
++-----------------------+--------------------------------------+---------------------------------------------+----------------------+
+| Workflow              | Annotation type                      | Active learning?                            | Script folder        |
++=======================+======================================+=============================================+======================+
+| 🎯 **Classification** | Global Radio                         | ✅ Yes (confidence works)                   | `scripts/04a_class/` |
++-----------------------+--------------------------------------+---------------------------------------------+----------------------+
+| 📦 **Boxes**          | `BBOX` + nested Radio                | ✅ Yes (confidence works)                   | `scripts/04b_boxes/` |
++-----------------------+--------------------------------------+---------------------------------------------+----------------------+
+| 🎭 **Masks**          | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken    | `scripts/04c_masks/` |
++-----------------------+--------------------------------------+---------------------------------------------+----------------------+
 
 Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.plantnet.org/xprize-final-trees/species) (\~2 464 taxa).
 
@@ -30,9 +34,10 @@ Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.p
 ## 💻 Prerequisites
 
 -   **Python 3.10+** (tested with 3.13)
--   **Git** installed ([git-scm.com](https://git-scm.com/))
--   A **Pl\@ntNet API key** → [my.plantnet.org](https://my.plantnet.org/)
--   A **Labelbox API key** → [app.labelbox.com](https://app.labelbox.com/) → Settings → API Keys
+-   **Git** installed ([git-scm.com](https://git-scm.com))
+-   A **Pl\@ntNet API key** → [my.plantnet.org](https://my.plantnet.org)
+-   A **Labelbox API key** → [app.labelbox.com](https://app.labelbox.com) → Settings → API Keys
+
 
 ------------------------------------------------------------------------
 
@@ -41,7 +46,7 @@ Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.p
 ### 1. Clone this repo
 
 ``` bash
-git clone https://github.com/<YOUR_USERNAME>/labelbox_plantnet.git
+git clone https://github.com/YOUR_USERNAME/labelbox_plantnet.git
 cd labelbox_plantnet
 ```
 
@@ -53,7 +58,7 @@ python -m venv .venv
 
 ### 3. Activate the virtual environment
 
-**Windows (Power Shell):**
+**Windows (PowerShell):**
 
 ``` powershell
 .venv\Scripts\Activate.ps1
@@ -104,147 +109,168 @@ DJI_20250405090025_0008_V_121zoom.JPG
 DJI_20250405090425_0018_V_93zoom.JPG
 ```
 
+
 ------------------------------------------------------------------------
 
 ## 🏃 How to run — step by step
 
 All commands assume you are in the project root (`labelbox_plantnet/`) with the virtual environment activated.
 
+The pipeline is split into **shared steps** (fetch species, upload images, get Pl\@ntNet predictions) followed by **workflow-specific steps** (classification, boxes, masks). The shared steps only need to be run once; the three workflows can then be run independently.
+
+> ⚠️ All parameters are paths are configurable in `config.yaml`. The provided scripts use the default paths as shown in the outputs below.
+
 ### 🌱 Step 1 — Fetch species list from Pl\@ntNet
 
-Downloads the \~2 464 species (scientific names + GBIF IDs) from the "Trees of the Brazilian Amazon" micro-project.
+Downloads the \~2 464 species (scientific names + GBIF IDs) from the "Trees of the Brazilian Amazon" micro-project. This is a **shared** step — the species list is used by all three workflows.
 
-``` bash
-python scripts/<workflow>01_fetch_plantnet_species.py
+```bash
+python scripts/01_species/01_fetch_species.py
 ```
 
-**Output**: `output/<workflow>/species_raw.json`
+**Output**: `output/species/species_raw.json, output/species/species_list.csv`
 
-### 📦 Bounding box workflow
+### 🖼️ Step 2 — Upload images to Labelbox
 
-#### Step 2 — Create the Labelbox ontology
-
-Creates a `tree` bounding box tool with a nested `species` Radio classification (\~2 464 options).
+Creates a Labelbox dataset and uploads all images from the images/ folder. This is a shared step — the same dataset is reused by all three workflows.
 
 ``` bash
-python scripts/boxes/02_create_ontology.py
+python scripts/02_images/02_upload_images.py
+```
+
+**Output**: `output/images/dataset_id.txt, output/images/upload_summary.json`
+
+### 🔮 Step 3 — Run Pl\@ntNet predictions
+
+Two prediction scripts are available:
+
+#### 3a. Single-species predictions (Classification workflow):
+
+Runs the standard Pl\@ntNet identify endpoint on each image, returning the single best species prediction per image, with confidence score. This is used in the Classification workflow as a global image-level label.
+
+``` bash
+python scripts/03_predictions/03a_single_predict.py
+```
+
+**Output**: `output/predictions/single_predictions.json`
+
+#### 3b. Multi-species survey predictions (Boxes and Masks workflows):
+
+Runs the multi-species (i.e. survey) endpoint, which breaks each image into tiles and returns the best species prediction + confidence score for each tile. This is used in the Boxes and Masks workflows to create more granular annotations.
+
+``` bash
+`python scripts/03_predictions/03b_multi_predict.py`
+```
+
+**Output**: `output/predictions/multi_predictions.json`
+
+> ⚠️ The multi-species survey endpoint can be expensive in API credits. The script displays a cost estimate before proceeding.
+
+### 🎯 Step 4a — Classification workflow
+
+Uses **single-species predictions** — each image gets a single global label with the top predicted species. This can be useful for active learning to prioritize human review of low-confidence images.
+
+#### 4a.1 — Create the classification ontology
+
+The classification ontology uses a single `Radio` tool with one class per species (2 464 classes in this example).
+
+``` bash
+python scripts/04a_class/04_create_ontology.py`
+```
+
+**Output:** `output/class/ontology_id.txt`
+
+#### 4a.2 — Create the classification project
+
+Creates an empty labelling classification project to classify individual imnages to its most likely species.
+
+``` bash
+python scripts/04a_class/05_create_project.py
+```
+
+**Output:** `output/class/project_id.txt`
+
+#### 4a.3 — Import classification predictions into a Model Run
+
+Imports the single-species Pl\@ntNet predictions as a Model Run in Labelbox, associating each image with its predicted species label and confidence score.
+
+``` bash
+python scripts/04a_class/06_import_predictions.py
+```
+
+> ⚠️ To send batchs to the labelling project, consult the [documentation](https://docs.labelbox.com/docs/model-run-batches).
+
+**Output:** `output/class/model_run_id.txt`, `output/class/model_run_summary.json`
+
+### 📦 Step 4b — Bounding box workflow
+
+Uses **multi-species survey predictions** — each species tile becomes a bounding box with a nested species Radio classification.
+
+#### 4b.1 — Create the bounding box ontology
+
+The bounding box ontology uses a `BBOX` tool to delineate species in the image, with a nested `Radio` for species classification (2 464 classes in this example).
+
+``` bash
+python scripts/04b_boxes/04_create_ontology.py
 ```
 
 **Output:** `output/boxes/ontology_id.txt`
 
-#### Step 3 — Create the Labelbox project + upload images
+#### 4b.2 — Create the bounding box project
 
-Creates a dataset, uploads images, creates a project, and sends a batch.
-
-``` bash
-python scripts/boxes/03_create_project.py
-```
-
-**Output:** `output/boxes/project_id.txt`, `output/boxes/dataset_id.txt`
-
-#### Step 4 — Generate mock Pl\@ntNet predictions
-
-> ⚠️ Replace with actual predictions once you have Pl\@ntNet API access for multi-species predictions.
-
-Simulates Pl\@ntNet multi-species predictions (518×518 non-overlapping tiles) for each image.
+Creates an empty labelling bounding box project to delineate species in the image.
 
 ``` bash
-python scripts/boxes/04_mock_predictions.py
+python scripts/04b_boxes/05_create_project.py
 ```
 
-**Output:** `output/boxes/plantnet_predictions.json`
+**Output:** `output/boxes/project_id.txt`
 
-#### Step 5 — Import predictions as MAL pre-labels
+#### 4b.3 — Import box predictions into a Model Run
 
-Imports bounding box predictions with nested species classifications into the Labelbox project as Model-Assisted Labeling (MAL) pre-labels.
-
-> ⚠️ **Optional step:** Useful for pre-labelling, but no confidence scores imported so cannot be used for active learning workflows. See next step.
+Imports the multi-species Pl\@ntNet predictions as a Model Run in Labelbox, selecting for each species predicted in an image the single tile with the highest confidence score.
 
 ``` bash
-python scripts/boxes/05_mal_import.py
+python scripts/04b_boxes/06_import_predictions.py
 ```
 
-#### Step 6 — Import predictions into a Model Run
+**Output:** `output/boxes/model_run_id.txt`, `output/boxes/model_run_summary.json`
 
-Creates a Model + Model Run and uploads predictions with confidence scores for active learning.
+### 🎭 Step 4c — Segmentation mask workflow
+
+Uses **multi-species survey predictions** — each species' best tile is painted onto a composite mask image with a unique color per species. These are made from box predictions but overlapping regions keep only the species with the highest confidence.
+
+#### 4c.1 — Create the segmentation ontology
+
+The segmentation mask ontology uses a `RASTER_SEGMENTATION` tool with one class per species.
 
 ``` bash
-python scripts/boxes/06_model_run.py
+python scripts/04c_masks/04_create_ontology.py
 ```
 
-------------------------------------------------------------------------
+**Output:** `output/masks/ontology_id.txt`
 
-### 🎯 Classification workflow
+#### 4c.2 — Create the segmentation project
 
-#### Step 2 — Create the classification ontology
+Creates an empty labelling segmentation project to delineate species in the image with masks.
 
 ``` bash
-python scripts/class/02_create_ontology.py
+python scripts/04c_masks/05_create_project.py
 ```
 
-#### Step 3 — Create the project + upload images
+**Output:** `output/masks/project_id.txt`
+
+#### 4c.3 — Import mask predictions into a Model Run
+
+Imports the multi-species Pl\@ntNet predictions as a Model Run in Labelbox, creating composite mask images for each photo where each pixel is assigned to the species with the highest confidence prediction for that pixel's tile.
+
+> ⚠️ Mask uploads are slow due to large PNG files (4000×3000 px). Expect a few minutes.
 
 ``` bash
-python scripts/class/03_create_project.py
+python scripts/04c_masks/06_import_predictions.py
 ```
 
-#### Step 4 — Generate mock predictions
-
-> ⚠️ Replace with actual predictions once you have Pl\@ntNet API access for multi-species predictions.
-
-``` bash
-python scripts/class/04_mock_predictions.py
-```
-
-#### Step 5 — Import predictions into a Model Run
-
-``` bash
-python scripts/class/05_model_run.py
-```
-
-------------------------------------------------------------------------
-
-### 🎭 Segmentation mask workflow
-
-#### Step 2 — Create the segmentation ontology
-
-Creates a `Plant` raster segmentation tool with a nested `species` Radio classification.
-
-``` bash
-python scripts/masks/02_create_ontology.py
-```
-
-#### Step 3 — Create the project + upload images
-
-``` bash
-python scripts/masks/03_create_project.py
-```
-
-#### Step 4 — Generate mock predictions
-
-> ⚠️ Replace with actual predictions once you have Pl\@ntNet API access for multi-species predictions.
-
-``` bash
-python scripts/masks/04_mock_predictions.py
-```
-
-#### Step 5 — Build composite mask images
-
-Generates per-species binary masks and a composite mask image per photo.
-
-``` bash
-python scripts/masks/05_build_masks.py
-```
-
-**Output:** `output/masks/mask_images/<image_name>/composite.png` + per-species PNGs
-
-#### Step 6 — Import masks into a Model Run
-
-> ⚠️ **Warning!** Confidence scores do not get imported per segmentation mask, despite what the Labelbox documentation says.
-
-``` bash
-python scripts/masks/06_model_run.py
-```
+**Output:** `output/masks/model_run_id.txt`, `output/masks/model_run_summary.json`, `output/masks/composite_masks/*.png`
 
 ------------------------------------------------------------------------
 
@@ -252,55 +278,60 @@ python scripts/masks/06_model_run.py
 
 ```         
 labelbox_plantnet/
-├── .env.example          # Template for API keys
-├── .env                  # Your actual API keys (git-ignored)
+├── .env.example              # Template for API keys
+├── .env                      # Your actual API keys (git-ignored)
 ├── .gitignore
+├── config.yaml               # Central pipeline configuration
 ├── requirements.txt
 ├── README.md
-├── images/               # Your drone photos
+├── images/                   # Your drone photos (git-ignored)
 │   └── *.JPG
+├── media/                    # Screenshots for README
+│   ├── class.jpg
+│   ├── boxes.jpg
+│   └── masks.jpg
 ├── scripts/
-│   ├── boxes/
-│   │   ├── 01_fetch_plantnet_species.py
-│   │   ├── 02_create_ontology.py
-│   │   ├── 03_create_project.py
-│   │   ├── 04_plantnet_predict.py
-│   │   ├── 04b_mock_predictions.py
-│   │   ├── 05_import_predictions.py
-│   │   └── 06_model_run.py
-│   ├── class/
-│   │   ├── 01_fetch_plantnet_species.py
-│   │   ├── 02_create_ontology.py
-│   │   ├── 03_create_project.py
-│   │   ├── 04_plantnet_predict.py
-│   │   └── 05_model_run.py
-│   └── masks/
-│   │   ├── 01_fetch_plantnet_species.py
-│       ├── 02_create_ontology.py
-│       ├── 03_create_project.py
-│       ├── 04b_mock_predictions.py
-│       ├── 05_build_masks.py
-│       ├── 06_model_run.py
-│   │   └── 07_import_predictions.py
-└── output/               # Generated files
-    ├── boxes/
-    ├── class/
-    └── masks/
+│   ├── 01_species/           # Shared: fetch species list
+│   │   └── 01_fetch_species.py
+│   ├── 02_images/            # Shared: upload images to Labelbox
+│   │   └── 02_upload_images.py
+│   ├── 03_predictions/       # Shared: run Pl@ntNet predictions
+│   │   ├── 03a_single_predict.py
+│   │   └── 03b_multi_predict.py
+│   ├── 04a_class/            # Classification workflow
+│   │   ├── 04_create_ontology.py
+│   │   ├── 05_create_project.py
+│   │   └── 06_import_predictions.py
+│   ├── 04b_boxes/            # Bounding box workflow
+│   │   ├── 04_create_ontology.py
+│   │   ├── 05_create_project.py
+│   │   └── 06_import_predictions.py
+│   └── 04c_masks/            # Segmentation mask workflow
+│       ├── 04_create_ontology.py
+│       ├── 05_create_project.py
+│       └── 06_import_predictions.py
+└── output/                   # Generated files (git-ignored except .gitkeep)
+    ├── species/              # species_raw.json, species_list.csv
+    ├── images/               # dataset_id.txt, upload_summary.json
+    ├── predictions/          # single_predictions.json, multi_predictions.json
+    ├── class/                # ontology_id.txt, project_id.txt, model_run_id.txt
+    ├── boxes/                # ontology_id.txt, project_id.txt, model_run_id.txt
+    └── masks/                # ontology_id.txt, project_id.txt, model_run_id.txt, composite_masks/
 ```
 
 ------------------------------------------------------------------------
 
 ## 🚫 Known limitations
 
--   **Confidence threshold slider does not filter segmentation masks** in the Labelbox Model Run gallery view. Confidence scores are stored correctly (visible in the Parsed view) but the UI slider has no effect on mask predictions. This works correctly for bounding boxes.
+-   **Confidence threshold slider does not filter segmentation masks** in the Labelbox Model Run gallery view. Confidence scores are stored correctly in the nested classification (i.e. species predictions) but not at the tool (mask) level, such that the UI slider has no effect on mask predictions. This works correctly for bounding boxes and classification.
 
 -   **Max 4 000 classes per ontology** — the 2 464 taxa from the Brazilian Amazon micro-project fits within this limit, but the full Pl\@ntNet global flora (82K species) would not.
-
--   The Labelbox docs show `confidence=0.5` inside `lb_types.Mask()`, but the `Mask` class has no `confidence` field. The correct placement is on `ObjectAnnotation(confidence=...)` **and** `ClassificationAnswer(confidence=...)`. Both parent and child nodes must have confidence or neither can. Despite this working for bounding boxes however, it does not work in Labelbox.
 
 ------------------------------------------------------------------------
 
 ## 🔗 Useful links
+
+-   [Pl\@ntNet API — Single species](https://my.plantnet.org/doc/api/identify)
 
 -   [Pl\@ntNet API — Survey (multi-species)](https://my.plantnet.org/doc/api/survey)
 
@@ -310,4 +341,4 @@ labelbox_plantnet/
 
 -   [Labelbox — Active learning](https://docs.labelbox.com/docs/active-learning)
 
--   [Labelbox — Limits (4K classes)](https://docs.labelbox.com/docs/limits#schema)
+-   [Labelbox — Limits (4K classes)](https://docs.labelbox.com/docs/limits)
