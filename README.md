@@ -17,15 +17,11 @@ Integrating [Pl\@ntNet](https://plantnet.org) multi-species predictions with [La
 
 Three annotation workflows are demonstrated:
 
-+-----------------------+--------------------------------------+---------------------------------------------+----------------------+
-| Workflow              | Annotation type                      | Active learning?                            | Script folder        |
-+=======================+======================================+=============================================+======================+
-| 🎯 **Classification** | Global Radio                         | ✅ Yes (confidence works)                   | `scripts/04a_class/` |
-+-----------------------+--------------------------------------+---------------------------------------------+----------------------+
-| 📦 **Boxes**          | `BBOX` + nested Radio                | ✅ Yes (confidence works)                   | `scripts/04b_boxes/` |
-+-----------------------+--------------------------------------+---------------------------------------------+----------------------+
-| 🎭 **Masks**          | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken    | `scripts/04c_masks/` |
-+-----------------------+--------------------------------------+---------------------------------------------+----------------------+
+| Workflow | Annotation type | Active learning? | Script folder |
+|:---|:---|:---|:---|
+| 🎯 **Classification** | Global Radio | ✅ Yes (confidence works) | `scripts/04a_class/` |
+| 📦 **Boxes** | `BBOX` + nested Radio | ✅ Yes (confidence works) | `scripts/04b_boxes/` |
+| 🎭 **Masks** | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken | `scripts/04c_masks/` |
 
 Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.plantnet.org/xprize-final-trees/species) (\~2 464 taxa).
 
