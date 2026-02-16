@@ -116,6 +116,8 @@ The pipeline is split into **shared steps** (fetch species, upload images, get P
 
 > ⚠️ All parameters are paths are configurable in `config.yaml`. The provided scripts use the default paths as shown in the outputs below.
 
+------------------------------------------------------------------------
+
 ### 🌱 Step 1 — Fetch species list from Pl\@ntNet
 
 Downloads the \~2 464 species (scientific names + GBIF IDs) from the "Trees of the Brazilian Amazon" micro-project. This is a **shared** step — the species list is used by all three workflows.
@@ -126,6 +128,8 @@ python scripts/01_species/01_fetch_species.py
 
 **Output**: `output/species/species_raw.json, output/species/species_list.csv`
 
+------------------------------------------------------------------------
+
 ### 🖼️ Step 2 — Upload images to Labelbox
 
 Creates a Labelbox dataset and uploads all images from the images/ folder. This is a shared step — the same dataset is reused by all three workflows.
@@ -135,6 +139,8 @@ python scripts/02_images/02_upload_images.py
 ```
 
 **Output**: `output/images/dataset_id.txt, output/images/upload_summary.json`
+
+------------------------------------------------------------------------
 
 ### 🔮 Step 3 — Run Pl\@ntNet predictions
 
@@ -161,6 +167,8 @@ Runs the multi-species (i.e. survey) endpoint, which breaks each image into tile
 **Output**: `output/predictions/multi_predictions.json`
 
 > ⚠️ The multi-species survey endpoint can be expensive in API credits. The script displays a cost estimate before proceeding.
+
+------------------------------------------------------------------------
 
 ### 🎯 Step 4a — Classification workflow
 
@@ -198,6 +206,8 @@ python scripts/04a_class/06_import_predictions.py
 
 **Output:** `output/class/model_run_id.txt`, `output/class/model_run_summary.json`
 
+------------------------------------------------------------------------
+
 ### 📦 Step 4b — Bounding box workflow
 
 Uses **multi-species survey predictions** — each species tile becomes a bounding box with a nested species Radio classification.
@@ -231,6 +241,8 @@ python scripts/04b_boxes/06_import_predictions.py
 ```
 
 **Output:** `output/boxes/model_run_id.txt`, `output/boxes/model_run_summary.json`
+
+------------------------------------------------------------------------
 
 ### 🎭 Step 4c — Segmentation mask workflow
 
