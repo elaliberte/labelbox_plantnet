@@ -1,0 +1,114 @@
+"""
+Step 4: Create a Labelbox ontology for single-species image classification.
+
+The ontology has NO tools — just a global Radio classification
+("Select the plant species.") with all ~2,464 taxa from the
+Pl@ntNet 'Trees of the Brazilian Amazon' project.
+
+Inputs:
+  - config.yaml
+  - output/species/species_list.csv
+
+Outputs:
+  - output/class/ontology_id.txt
+"""
+
+import os
+import sys
+import csv
+import yaml
+import labelbox as lb
+from dotenv import load_dotenv
+
+# ─── Paths ───────────────────────────────────────────────────────
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+
+with open(os.path.join(PROJECT_ROOT, "config.yaml"), "r") as f:
+    cfg = yaml.safe_load(f)
+
+lb_cfg = cfg["labelbox"]
+SPECIES_DIR = os.path.join(PROJECT_ROOT, cfg["folders"]["output_species"])
+CLASS_DIR = os.path.join(PROJECT_ROOT, cfg["folders"]["output_class"])
+os.makedirs(CLASS_DIR, exist_ok=True)
+
+# Config values
+ONTOLOGY_NAME = lb_cfg["ontology_name_class"]
+CLASSIFICATION_INSTRUCTIONS = lb_cfg["classification_instructions"]
+
+# ─── Load species list ───────────────────────────────────────────
+species_path = os.path.join(SPECIES_DIR, "species_list.csv")
+species = []
+with open(species_path, newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        species.append(row)
+
+print(f"Loaded {len(species)} species from {species_path}")
+
+# ─── Build ontology options ──────────────────────────────────────
+options = []
+for sp in species:
+    options.append(
+        lb.Option(
+            value=sp["gbif_id"],
+            label=sp["scientific_name"],
+        )
+    )
+
+print(f"Built {len(options)} radio options")
+
+# ─── Build ontology ──────────────────────────────────────────────
+# No tools — just a global Radio classification at the image level
+ontology_builder = lb.OntologyBuilder(
+    classifications=[
+        lb.Classification(
+            class_type=lb.Classification.Type.RADIO,
+            name=CLASSIFICATION_INSTRUCTIONS,
+            options=options,
+        )
+    ]
+)
+
+# ─── Connect to Labelbox ────────────────────────────────────────
+API_KEY = os.getenv("LABELBOX_API_KEY")
+if not API_KEY:
+    sys.exit("ERROR: LABELBOX_API_KEY not found in .env")
+
+client = lb.Client(api_key=API_KEY)
+print("\nConnected to Labelbox")
+
+# ─── Create or find ontology ────────────────────────────────────
+print(f"\nLooking for ontology: {ONTOLOGY_NAME}")
+ontology = None
+for o in client.get_ontologies(ONTOLOGY_NAME):
+    if o.name == ONTOLOGY_NAME:
+        ontology = o
+        print(f"  Found existing ontology: {ontology.uid}")
+        break
+
+if ontology is None:
+    print(f"  Creating new ontology: {ONTOLOGY_NAME}")
+    ontology = client.create_ontology(
+        ONTOLOGY_NAME,
+        ontology_builder.asdict(),
+        media_type=lb.MediaType.Image,
+    )
+    print(f"  Ontology ID: {ontology.uid}")
+
+# ─── Save ontology ID ───────────────────────────────────────────
+ontology_id_path = os.path.join(CLASS_DIR, "ontology_id.txt")
+with open(ontology_id_path, "w") as f:
+    f.write(ontology.uid)
+
+print(f"""
+==================================================
+ONTOLOGY READY (Classification)
+==================================================
+Name: {ONTOLOGY_NAME}
+ID:   {ontology.uid}
+Type: Global Radio classification (no tools)
+Species options: {len(options)}
+Saved to: {ontology_id_path}
+==================================================
+""")

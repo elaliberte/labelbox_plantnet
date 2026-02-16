@@ -1,0 +1,11 @@
+{
+  "model_name": "Pl@ntNet Survey - Classification",
+  "model_id": "a9af9e62-9f89-0571-9ca9-bdcbce74def3",
+  "model_run_name": "run_2026-02-16_single",
+  "model_run_id": "a9af9e63-0c29-0240-6ad2-4699774ccaa5",
+  "images_processed": 4,
+  "images_skipped": 0,
+  "upload_success": 4,
+  "upload_failure": 0,
+  "timestamp": "2026-02-16T15:18:25.541893"
+}

@@ -1,18 +1,27 @@
-# 🌿 Labelbox × Pl\@ntNet — Brazilian Amazon Trees
+# 🌿 Labelbox × Pl\@ntNet integration - Demo
 
-| Boxes | Classification | Masks |
-|:---:|:---:|:---:|
-| <img src="media/boxes.jpg" alt="Boxes" height="180"/> | <img src="media/class.jpg" alt="Classification" height="180"/> | <img src="media/masks.jpg" alt="Masks" height="180"/> |
+<table>
+  <tr>
+    <th align="center">Classification</th>
+    <th align="center">Boxes</th>
+    <th align="center">Masks</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="media/class.jpg" alt="Classification" width="300"/></td>
+    <td align="center"><img src="media/boxes.jpg" alt="Boxes" width="300"/></td>
+    <td align="center"><img src="media/masks.jpg" alt="Masks" width="300"/></td>
+  </tr>
+</table>
 
-Integrating [Pl\@ntNet](https://plantnet.org/) multi-species predictions with [Labelbox](https://labelbox.com/) for model-assisted labelling of ultra high-resolution drone close-up photos of tropical trees (Brazilian Amazon).
+Integrating [Pl\@ntNet](https://plantnet.org/) single or multi-species predictions with [Labelbox](https://labelbox.com/) for model-assisted labelling of ultra high-resolution drone close-up photos. Demonstration on tropical trees (Brazilian Amazon).
 
 Three annotation workflows are demonstrated:
 
 | Workflow | Annotation type | Active learning? | Script folder |
 |------------------|------------------|------------------|------------------|
-| **📦 Bounding boxes** | `BBOX` + nested Radio | ✅ Yes (confidence works) | `scripts/boxes/` |
-| 🎯 **Classification** | Global Radio | ✅ Yes (confidence works) | `scripts/class/` |
-| 🎭 **Segmentation masks** | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken | `scripts/masks/` |
+| 🎯 **Classification** | Global Radio | ✅ Yes (confidence works) | `scripts/04a_class/` |
+| **📦 Bounding boxes** | `BBOX` + nested Radio | ✅ Yes (confidence works) | `scripts/04b_boxes/` |
+| 🎭 **Segmentation masks** | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken | `scripts/04c_masks/` |
 
 Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.plantnet.org/xprize-final-trees/species) (\~2 464 taxa).
 

@@ -1,0 +1,179 @@
+{
+  "query": {
+    "project": "xprize-final-trees",
+    "images": [
+      "97fa717b8de233025f4b8192e0f43cf6"
+    ],
+    "organs": [
+      "auto"
+    ],
+    "includeRelatedImages": false,
+    "noReject": true,
+    "type": null
+  },
+  "predictedOrgans": [
+    {
+      "image": "97fa717b8de233025f4b8192e0f43cf6",
+      "filename": "DJI_20250405090640_0024_V_57zoom.JPG",
+      "organ": "leaf",
+      "score": 0.41495
+    }
+  ],
+  "language": "en",
+  "preferedReferential": "xprize-final-trees",
+  "results": [
+    {
+      "score": 0.01582,
+      "species": {
+        "scientificNameWithoutAuthor": "Couratari guianensis",
+        "scientificNameAuthorship": "Aubl.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Couratari",
+          "scientificNameAuthorship": "",
+          "scientificName": "Couratari"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Lecythidaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Lecythidaceae"
+        },
+        "commonNames": [
+          "Fine-leaf Wadara"
+        ],
+        "scientificName": "Couratari guianensis Aubl."
+      },
+      "gbif": {
+        "id": "3083111"
+      },
+      "powo": {
+        "id": "592371-1"
+      },
+      "iucn": {
+        "id": "30599",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00453,
+      "species": {
+        "scientificNameWithoutAuthor": "Bertholletia excelsa",
+        "scientificNameAuthorship": "Bonpl.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Bertholletia",
+          "scientificNameAuthorship": "",
+          "scientificName": "Bertholletia"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Lecythidaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Lecythidaceae"
+        },
+        "commonNames": [
+          "Brazil nut",
+          "Brazil-nut Tree",
+          "Para Nut"
+        ],
+        "scientificName": "Bertholletia excelsa Bonpl."
+      },
+      "gbif": {
+        "id": "3083180"
+      },
+      "powo": {
+        "id": "591270-1"
+      },
+      "iucn": {
+        "id": "32986",
+        "category": "VU"
+      }
+    },
+    {
+      "score": 0.00348,
+      "species": {
+        "scientificNameWithoutAuthor": "Cariniana estrellensis",
+        "scientificNameAuthorship": "(Raddi) Kuntze",
+        "genus": {
+          "scientificNameWithoutAuthor": "Cariniana",
+          "scientificNameAuthorship": "",
+          "scientificName": "Cariniana"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Lecythidaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Lecythidaceae"
+        },
+        "commonNames": [
+          "Plains Oak"
+        ],
+        "scientificName": "Cariniana estrellensis (Raddi) Kuntze"
+      },
+      "gbif": {
+        "id": "3083020"
+      },
+      "powo": {
+        "id": "47516-2"
+      }
+    },
+    {
+      "score": 0.00326,
+      "species": {
+        "scientificNameWithoutAuthor": "Hancornia speciosa",
+        "scientificNameAuthorship": "Gomes",
+        "genus": {
+          "scientificNameWithoutAuthor": "Hancornia",
+          "scientificNameAuthorship": "",
+          "scientificName": "Hancornia"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Apocynaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Apocynaceae"
+        },
+        "commonNames": [
+          "Mangabeira"
+        ],
+        "scientificName": "Hancornia speciosa Gomes"
+      },
+      "gbif": {
+        "id": "3169679"
+      },
+      "powo": {
+        "id": "328991-2"
+      },
+      "iucn": {
+        "id": "189173041",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00277,
+      "species": {
+        "scientificNameWithoutAuthor": "Lecythis gracieana",
+        "scientificNameAuthorship": "S.A.Mori",
+        "genus": {
+          "scientificNameWithoutAuthor": "Lecythis",
+          "scientificNameAuthorship": "",
+          "scientificName": "Lecythis"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Lecythidaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Lecythidaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Lecythis gracieana S.A.Mori"
+      },
+      "gbif": {
+        "id": "3082349"
+      },
+      "powo": {
+        "id": "303921-2"
+      },
+      "iucn": {
+        "id": "191156150",
+        "category": "LC"
+      }
+    }
+  ],
+  "version": "2025-10-08 (7.4)",
+  "remainingIdentificationRequests": 497
+}

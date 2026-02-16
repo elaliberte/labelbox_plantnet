@@ -1,0 +1,2434 @@
+{
+  "status": "OK",
+  "query": {
+    "project": "xprize-final-trees",
+    "images": [
+      ""
+    ],
+    "organs": [
+      "auto"
+    ],
+    "filters": [],
+    "exclude": [],
+    "what": "QUADRAT",
+    "family_check": false,
+    "genus_check": false,
+    "reject_type": "ALL",
+    "ignore_reject": [],
+    "flavor": "tiles",
+    "tile_size": 518,
+    "tile_stride": 259,
+    "multi_scale": true,
+    "size_factor": 1.4142135623730951,
+    "pyramid": false,
+    "min_score": 0.005,
+    "max_rank": 1,
+    "stats": {
+      "all": 8.02630669,
+      "download": 0,
+      "extract": 7.844682883,
+      "post-process": 1.4531e-05,
+      "pre-process": 0.008551258,
+      "process": 8.017658482,
+      "simsearch": 0,
+      "wait-download": 0,
+      "wait-extract": 0,
+      "wait-simsearch": 0,
+      "from": "unknown",
+      "image_source": "POST",
+      "method": "post",
+      "nb_images": "1",
+      "route": "v2",
+      "status": "",
+      "type": "quadrat"
+    }
+  },
+  "results": {
+    "tile_size": 518,
+    "tile_stride": 259,
+    "nb_sub_queries": 242,
+    "nb_matching_sub_queries": 242,
+    "uncovered": 0.08135,
+    "image": {
+      "name": "",
+      "width": 4000,
+      "height": 3000,
+      "nb_sub_queries": 242,
+      "nb_matching_sub_queries": 242,
+      "uncovered": 0.08135
+    },
+    "species": [
+      {
+        "name": "Lecythis gracieana S.A.Mori",
+        "id": "1567803",
+        "gbif_id": "3082349",
+        "binomial": "Lecythis gracieana",
+        "author": "S.A.Mori",
+        "genus": "Lecythis",
+        "family": "Lecythidaceae",
+        "coverage": 0.31276,
+        "max_score": 0.03277,
+        "count": 70,
+        "location": [
+          {
+            "center": {
+              "x": 316,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00752,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.00922,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01687,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.01888,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.0154,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.00776,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.00824,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 316,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.00957,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.0102,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.00771,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01329,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.01517,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.00796,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.03184,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.01668,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 575,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.01078,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 834,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00825,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 834,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.01378,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 834,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01221,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 834,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.00519,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 834,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.01632,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01738,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.00606,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.00651,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.00689,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00637,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.00563,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.01961,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.01877,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.0292,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.01808,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00573,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.00869,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.00502,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2129,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.00754,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2388,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.01337,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.01981,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.0078,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.00812,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.00885,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 535,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.00962,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 535,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.01237,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 535,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.01787,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 535,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.01276,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.00663,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.01228,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.01153,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.00565,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.01798,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.02943,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.02235,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.01595,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.01969,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.01017,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.00823,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.00504,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3463,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.01072,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3463,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.01606,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 704,
+              "y": 722
+            },
+            "size": 1037,
+            "score": 0.01193,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 704,
+              "y": 1758
+            },
+            "size": 1037,
+            "score": 0.01658,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 704,
+              "y": 2276
+            },
+            "size": 1037,
+            "score": 0.03277,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1222,
+              "y": 1240
+            },
+            "size": 1037,
+            "score": 0.01757,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1222,
+              "y": 1758
+            },
+            "size": 1037,
+            "score": 0.01676,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1222,
+              "y": 2276
+            },
+            "size": 1037,
+            "score": 0.031,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1740,
+              "y": 1758
+            },
+            "size": 1037,
+            "score": 0.0135,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2258,
+              "y": 1240
+            },
+            "size": 1037,
+            "score": 0.01841,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3294,
+              "y": 2276
+            },
+            "size": 1037,
+            "score": 0.00816,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 900,
+              "y": 766
+            },
+            "size": 1467,
+            "score": 0.01137,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2366,
+              "y": 766
+            },
+            "size": 1467,
+            "score": 0.01016,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1481,
+              "y": 1499
+            },
+            "size": 2075,
+            "score": 0.01223,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Bertholletia excelsa Bonpl.",
+        "id": "1405235",
+        "gbif_id": "3083180",
+        "binomial": "Bertholletia excelsa",
+        "author": "Bonpl.",
+        "genus": "Bertholletia",
+        "family": "Lecythidaceae",
+        "coverage": 0.13745,
+        "max_score": 0.05423,
+        "count": 42,
+        "location": [
+          {
+            "center": {
+              "x": 575,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.01847,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 834,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.02202,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.01413,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.02756,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.02498,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.01657,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.0077,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01466,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.02891,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.02979,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.0089,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.00699,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.01822,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2129,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.00579,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2129,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.04143,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2129,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.00839,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 535,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.04146,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 535,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.02169,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.02615,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.04727,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.00981,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.00806,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.0156,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1267,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.00807,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.05423,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.01855,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.02278,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.0172,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.0416,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.01319,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.01025,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.00968,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 704,
+              "y": 1240
+            },
+            "size": 1037,
+            "score": 0.01407,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1222,
+              "y": 722
+            },
+            "size": 1037,
+            "score": 0.00921,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1740,
+              "y": 722
+            },
+            "size": 1037,
+            "score": 0.02707,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1740,
+              "y": 1240
+            },
+            "size": 1037,
+            "score": 0.01958,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1740,
+              "y": 2276
+            },
+            "size": 1037,
+            "score": 0.01536,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2258,
+              "y": 722
+            },
+            "size": 1037,
+            "score": 0.02205,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 900,
+              "y": 1499
+            },
+            "size": 1467,
+            "score": 0.03918,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 900,
+              "y": 2232
+            },
+            "size": 1467,
+            "score": 0.0174,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 766
+            },
+            "size": 1467,
+            "score": 0.02218,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 1499
+            },
+            "size": 1467,
+            "score": 0.04108,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Ficus americana Aubl.",
+        "id": "1405351",
+        "gbif_id": "5361926",
+        "binomial": "Ficus americana",
+        "author": "Aubl.",
+        "genus": "Ficus",
+        "family": "Moraceae",
+        "coverage": 0.08415,
+        "max_score": 0.31737,
+        "count": 17,
+        "location": [
+          {
+            "center": {
+              "x": 316,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.00987,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.00865,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2388,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.00782,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2647,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.07821,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2647,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.02566,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.00684,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.31737,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.02879,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3165,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.12189,
+            "organ": "aerial"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.09229,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.0092,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2731,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.0061,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2731,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.01038,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.11125,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3463,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.04271,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3294,
+              "y": 722
+            },
+            "size": 1037,
+            "score": 0.02095,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3294,
+              "y": 1240
+            },
+            "size": 1037,
+            "score": 0.02651,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Lecythis lurida (Miers) S.A.Mori",
+        "id": "1567805",
+        "gbif_id": "3082401",
+        "binomial": "Lecythis lurida",
+        "author": "(Miers) S.A.Mori",
+        "genus": "Lecythis",
+        "family": "Lecythidaceae",
+        "coverage": 0.08135,
+        "max_score": 0.03434,
+        "count": 14,
+        "location": [
+          {
+            "center": {
+              "x": 834,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.02395,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.01388,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.03359,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1352,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.01597,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.01245,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2388,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.02846,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2388,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.02405,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2647,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.00948,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3165,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.01148,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 901,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.02018,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.01812,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.03434,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 1499
+            },
+            "size": 733,
+            "score": 0.01262,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.01315,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Chrysophyllum gonocarpum (Mart. & Eichler) Engl.",
+        "id": "1730059",
+        "gbif_id": "2885694",
+        "binomial": "Chrysophyllum gonocarpum",
+        "author": "(Mart. & Eichler) Engl.",
+        "genus": "Chrysophyllum",
+        "family": "Sapotaceae",
+        "coverage": 0.07854,
+        "max_score": 0.16517,
+        "count": 12,
+        "location": [
+          {
+            "center": {
+              "x": 2906,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.00723,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.02101,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3165,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.02996,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01329,
+            "organ": "aerial"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.16517,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01032,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.09458,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.02351,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.0118,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3463,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.0224,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3463,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.01238,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2776,
+              "y": 2276
+            },
+            "size": 1037,
+            "score": 0.01604,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Miconia tomentosa (Rich.) D.Don",
+        "id": "1727108",
+        "gbif_id": "8335424",
+        "binomial": "Miconia tomentosa",
+        "author": "(Rich.) D.Don",
+        "genus": "Miconia",
+        "family": "Melastomataceae",
+        "coverage": 0.04488,
+        "max_score": 0.04036,
+        "count": 4,
+        "location": [
+          {
+            "center": {
+              "x": 2129,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.01014,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2388,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.00862,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2647,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.01105,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2647,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.04036,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Bellucia pentamera Naudin",
+        "id": "1382108",
+        "gbif_id": "3866517",
+        "binomial": "Bellucia pentamera",
+        "author": "Naudin",
+        "genus": "Bellucia",
+        "family": "Melastomataceae",
+        "coverage": 0.02244,
+        "max_score": 0.16115,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3683,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.16115,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Annona exsucca DC.",
+        "id": "1726057",
+        "gbif_id": "5407569",
+        "binomial": "Annona exsucca",
+        "author": "DC.",
+        "genus": "Annona",
+        "family": "Annonaceae",
+        "coverage": 0.02244,
+        "max_score": 0.01716,
+        "count": 2,
+        "location": [
+          {
+            "center": {
+              "x": 575,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.01716,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1093,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00727,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Pouteria macrophylla (Lam.) Eyma",
+        "id": "1403515",
+        "gbif_id": "2884481",
+        "binomial": "Pouteria macrophylla",
+        "author": "(Lam.) Eyma",
+        "genus": "Pouteria",
+        "family": "Sapotaceae",
+        "coverage": 0.01683,
+        "max_score": 0.02258,
+        "count": 3,
+        "location": [
+          {
+            "center": {
+              "x": 2388,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00521,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.02258,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.01076,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Thyrsodium spruceanum Benth.",
+        "id": "1403797",
+        "gbif_id": "3659586",
+        "binomial": "Thyrsodium spruceanum",
+        "author": "Benth.",
+        "genus": "Thyrsodium",
+        "family": "Anacardiaceae",
+        "coverage": 0.01122,
+        "max_score": 0.02725,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3424,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.02725,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Machaerium quinata (Aubl.) Sandwith",
+        "id": "1581324",
+        "gbif_id": "5355133",
+        "binomial": "Machaerium quinata",
+        "author": "(Aubl.) Sandwith",
+        "genus": "Machaerium",
+        "family": "Fabaceae",
+        "coverage": 0.01122,
+        "max_score": 0.02288,
+        "count": 2,
+        "location": [
+          {
+            "center": {
+              "x": 3165,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.02288,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.00922,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "reject": "Lichens",
+        "coverage": 0.01122,
+        "max_score": 0.02208,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3683,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.02208
+          }
+        ]
+      },
+      {
+        "name": "Croton matourensis Aubl.",
+        "id": "1401683",
+        "gbif_id": "3058007",
+        "binomial": "Croton matourensis",
+        "author": "Aubl.",
+        "genus": "Croton",
+        "family": "Euphorbiaceae",
+        "coverage": 0.01122,
+        "max_score": 0.0161,
+        "count": 2,
+        "location": [
+          {
+            "center": {
+              "x": 2388,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.0161,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.01578,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Couratari stellata A.C.Sm.",
+        "id": "1401955",
+        "gbif_id": "3083141",
+        "binomial": "Couratari stellata",
+        "author": "A.C.Sm.",
+        "genus": "Couratari",
+        "family": "Lecythidaceae",
+        "coverage": 0.01122,
+        "max_score": 0.01517,
+        "count": 7,
+        "location": [
+          {
+            "center": {
+              "x": 2388,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.00875,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2647,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.00542,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.0051,
+            "organ": "aerial"
+          },
+          {
+            "center": {
+              "x": 2906,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.00808,
+            "organ": "bark"
+          },
+          {
+            "center": {
+              "x": 2731,
+              "y": 2597
+            },
+            "size": 733,
+            "score": 0.01232,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3097,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.01517,
+            "organ": "bark"
+          },
+          {
+            "center": {
+              "x": 3099,
+              "y": 2232
+            },
+            "size": 1467,
+            "score": 0.00699,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Ficus citrifolia Mill.",
+        "id": "1402442",
+        "gbif_id": "5361938",
+        "binomial": "Ficus citrifolia",
+        "author": "Mill.",
+        "genus": "Ficus",
+        "family": "Moraceae",
+        "coverage": 0.01122,
+        "max_score": 0.01393,
+        "count": 6,
+        "location": [
+          {
+            "center": {
+              "x": 1352,
+              "y": 2665
+            },
+            "size": 518,
+            "score": 0.01192,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1611,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.00889,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1870,
+              "y": 1629
+            },
+            "size": 518,
+            "score": 0.0071,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1999,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.01112,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2258,
+              "y": 1758
+            },
+            "size": 1037,
+            "score": 0.01393,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2258,
+              "y": 2276
+            },
+            "size": 1037,
+            "score": 0.01016,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Hevea guianensis Aubl.",
+        "id": "1401700",
+        "gbif_id": "3071199",
+        "binomial": "Hevea guianensis",
+        "author": "Aubl.",
+        "genus": "Hevea",
+        "family": "Euphorbiaceae",
+        "coverage": 0.01122,
+        "max_score": 0.01009,
+        "count": 6,
+        "location": [
+          {
+            "center": {
+              "x": 3165,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.01009,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3165,
+              "y": 2147
+            },
+            "size": 518,
+            "score": 0.00834,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.00778,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3424,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.01009,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.00881,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3294,
+              "y": 1758
+            },
+            "size": 1037,
+            "score": 0.00786,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Ficus gomelleira Kunth & C.D.Bouché",
+        "id": "1601917",
+        "gbif_id": "5571029",
+        "binomial": "Ficus gomelleira",
+        "author": "Kunth & C.D.Bouché",
+        "genus": "Ficus",
+        "family": "Moraceae",
+        "coverage": 0.01122,
+        "max_score": 0.00583,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 2647,
+              "y": 334
+            },
+            "size": 518,
+            "score": 0.00583,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Lacmellea edulis H.Karst.",
+        "id": "1461126",
+        "gbif_id": "3618040",
+        "binomial": "Lacmellea edulis",
+        "author": "H.Karst.",
+        "genus": "Lacmellea",
+        "family": "Apocynaceae",
+        "coverage": 0.00561,
+        "max_score": 0.05125,
+        "count": 2,
+        "location": [
+          {
+            "center": {
+              "x": 834,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.0111,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3683,
+              "y": 1370
+            },
+            "size": 518,
+            "score": 0.05125,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Couratari guianensis Aubl.",
+        "id": "1401954",
+        "gbif_id": "3083111",
+        "binomial": "Couratari guianensis",
+        "author": "Aubl.",
+        "genus": "Couratari",
+        "family": "Lecythidaceae",
+        "coverage": 0.00561,
+        "max_score": 0.03535,
+        "count": 12,
+        "location": [
+          {
+            "center": {
+              "x": 2129,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.02391,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.00757,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2731,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.02215,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2731,
+              "y": 767
+            },
+            "size": 733,
+            "score": 0.01452,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2776,
+              "y": 722
+            },
+            "size": 1037,
+            "score": 0.01888,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2776,
+              "y": 1758
+            },
+            "size": 1037,
+            "score": 0.01762,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 1633,
+              "y": 2232
+            },
+            "size": 1467,
+            "score": 0.01315,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2366,
+              "y": 1499
+            },
+            "size": 1467,
+            "score": 0.01137,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2366,
+              "y": 2232
+            },
+            "size": 1467,
+            "score": 0.02439,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3099,
+              "y": 766
+            },
+            "size": 1467,
+            "score": 0.02121,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2518,
+              "y": 1499
+            },
+            "size": 2075,
+            "score": 0.0189,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2000,
+              "y": 1500
+            },
+            "size": 2934,
+            "score": 0.03535,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Lecythis pisonis Cambess.",
+        "id": "1406634",
+        "gbif_id": "3082440",
+        "binomial": "Lecythis pisonis",
+        "author": "Cambess.",
+        "genus": "Lecythis",
+        "family": "Lecythidaceae",
+        "coverage": 0.00561,
+        "max_score": 0.01947,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 1870,
+              "y": 852
+            },
+            "size": 518,
+            "score": 0.01947,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Tachigali micropetala (Ducke) Zarucchi & Pipoly",
+        "id": "1400371",
+        "gbif_id": "3932278",
+        "binomial": "Tachigali micropetala",
+        "author": "(Ducke) Zarucchi & Pipoly",
+        "genus": "Tachigali",
+        "family": "Fabaceae",
+        "coverage": 0.00561,
+        "max_score": 0.00996,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3165,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.00996,
+            "organ": "bark"
+          }
+        ]
+      },
+      {
+        "name": "Caryocar villosum (Aubl.) Pers.",
+        "id": "1400795",
+        "gbif_id": "3826009",
+        "binomial": "Caryocar villosum",
+        "author": "(Aubl.) Pers.",
+        "genus": "Caryocar",
+        "family": "Caryocaraceae",
+        "coverage": 0.00561,
+        "max_score": 0.00821,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 1611,
+              "y": 2406
+            },
+            "size": 518,
+            "score": 0.00821,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Pouteria torta (Mart.) Radlk.",
+        "id": "1403525",
+        "gbif_id": "2884812",
+        "binomial": "Pouteria torta",
+        "author": "(Mart.) Radlk.",
+        "genus": "Pouteria",
+        "family": "Sapotaceae",
+        "coverage": 0,
+        "max_score": 0.02128,
+        "count": 2,
+        "location": [
+          {
+            "center": {
+              "x": 2731,
+              "y": 2231
+            },
+            "size": 733,
+            "score": 0.01948,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 3099,
+              "y": 1499
+            },
+            "size": 1467,
+            "score": 0.02128,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Virola surinamensis (Rol. ex Rottb.) Warb.",
+        "id": "1419531",
+        "gbif_id": "3152848",
+        "binomial": "Virola surinamensis",
+        "author": "(Rol. ex Rottb.) Warb.",
+        "genus": "Virola",
+        "family": "Myristicaceae",
+        "coverage": 0,
+        "max_score": 0.01802,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3463,
+              "y": 401
+            },
+            "size": 733,
+            "score": 0.01802,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Qualea parviflora Mart.",
+        "id": "1698355",
+        "gbif_id": "7288348",
+        "binomial": "Qualea parviflora",
+        "author": "Mart.",
+        "genus": "Qualea",
+        "family": "Vochysiaceae",
+        "coverage": 0,
+        "max_score": 0.01111,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3463,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.01111,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Parinari parvifolia Sandwith",
+        "id": "1404500",
+        "gbif_id": "2984969",
+        "binomial": "Parinari parvifolia",
+        "author": "Sandwith",
+        "genus": "Parinari",
+        "family": "Chrysobalanaceae",
+        "coverage": 0,
+        "max_score": 0.00842,
+        "count": 2,
+        "location": [
+          {
+            "center": {
+              "x": 2129,
+              "y": 1888
+            },
+            "size": 518,
+            "score": 0.00585,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2365,
+              "y": 1865
+            },
+            "size": 733,
+            "score": 0.00842,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Pouteria glomerata (Miq.) Radlk.",
+        "id": "1405586",
+        "gbif_id": "2884079",
+        "binomial": "Pouteria glomerata",
+        "author": "(Miq.) Radlk.",
+        "genus": "Pouteria",
+        "family": "Sapotaceae",
+        "coverage": 0,
+        "max_score": 0.00692,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3424,
+              "y": 593
+            },
+            "size": 518,
+            "score": 0.00692,
+            "organ": "bark"
+          }
+        ]
+      },
+      {
+        "name": "Vatairea macrocarpa (Benth.) Ducke",
+        "id": "1587787",
+        "gbif_id": "2965132",
+        "binomial": "Vatairea macrocarpa",
+        "author": "(Benth.) Ducke",
+        "genus": "Vatairea",
+        "family": "Fabaceae",
+        "coverage": 0,
+        "max_score": 0.00657,
+        "count": 3,
+        "location": [
+          {
+            "center": {
+              "x": 2647,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.0065,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2731,
+              "y": 1133
+            },
+            "size": 733,
+            "score": 0.00564,
+            "organ": "leaf"
+          },
+          {
+            "center": {
+              "x": 2776,
+              "y": 1240
+            },
+            "size": 1037,
+            "score": 0.00657,
+            "organ": "leaf"
+          }
+        ]
+      },
+      {
+        "name": "Eugenia pseudopsidium Jacq.",
+        "id": "1402544",
+        "gbif_id": "5416958",
+        "binomial": "Eugenia pseudopsidium",
+        "author": "Jacq.",
+        "genus": "Eugenia",
+        "family": "Myrtaceae",
+        "coverage": 0,
+        "max_score": 0.00587,
+        "count": 1,
+        "location": [
+          {
+            "center": {
+              "x": 3683,
+              "y": 1111
+            },
+            "size": 518,
+            "score": 0.00587,
+            "organ": "leaf"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "2025-10-08 (7.4)"
+}

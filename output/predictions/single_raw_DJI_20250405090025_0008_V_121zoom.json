@@ -1,0 +1,171 @@
+{
+  "query": {
+    "project": "xprize-final-trees",
+    "images": [
+      "98846214d77d229b93b7a25d80bc8fb5"
+    ],
+    "organs": [
+      "auto"
+    ],
+    "includeRelatedImages": false,
+    "noReject": true,
+    "type": null
+  },
+  "predictedOrgans": [
+    {
+      "image": "98846214d77d229b93b7a25d80bc8fb5",
+      "filename": "DJI_20250405090025_0008_V_121zoom.JPG",
+      "organ": "habit",
+      "score": 0.45758
+    }
+  ],
+  "language": "en",
+  "preferedReferential": "xprize-final-trees",
+  "results": [
+    {
+      "score": 0.01268,
+      "species": {
+        "scientificNameWithoutAuthor": "Richeria grandis",
+        "scientificNameAuthorship": "Vahl",
+        "genus": {
+          "scientificNameWithoutAuthor": "Richeria",
+          "scientificNameAuthorship": "",
+          "scientificName": "Richeria"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Phyllanthaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Phyllanthaceae"
+        },
+        "commonNames": [
+          "Bwa bande"
+        ],
+        "scientificName": "Richeria grandis Vahl"
+      },
+      "gbif": {
+        "id": "3079144"
+      },
+      "powo": {
+        "id": "355200-1"
+      }
+    },
+    {
+      "score": 0.00556,
+      "species": {
+        "scientificNameWithoutAuthor": "Hymenopus heteromorphus",
+        "scientificNameAuthorship": "(Benth.) Sothers & Prance",
+        "genus": {
+          "scientificNameWithoutAuthor": "Hymenopus",
+          "scientificNameAuthorship": "",
+          "scientificName": "Hymenopus"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Chrysobalanaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Chrysobalanaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Hymenopus heteromorphus (Benth.) Sothers & Prance"
+      },
+      "gbif": {
+        "id": "10451142"
+      },
+      "powo": {
+        "id": "77156960-1"
+      },
+      "iucn": {
+        "id": "61988380",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00334,
+      "species": {
+        "scientificNameWithoutAuthor": "Symmeria paniculata",
+        "scientificNameAuthorship": "Benth.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Symmeria",
+          "scientificNameAuthorship": "",
+          "scientificName": "Symmeria"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Polygonaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Polygonaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Symmeria paniculata Benth."
+      },
+      "gbif": {
+        "id": "7291273"
+      },
+      "powo": {
+        "id": "697710-1"
+      },
+      "iucn": {
+        "id": "203730523",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00189,
+      "species": {
+        "scientificNameWithoutAuthor": "Simaba orinocensis",
+        "scientificNameAuthorship": "Kunth",
+        "genus": {
+          "scientificNameWithoutAuthor": "Simaba",
+          "scientificNameAuthorship": "",
+          "scientificName": "Simaba"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Simaroubaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Simaroubaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Simaba orinocensis Kunth"
+      },
+      "gbif": {
+        "id": "3709147"
+      },
+      "powo": {
+        "id": "814110-1"
+      },
+      "iucn": {
+        "id": "145665237",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00169,
+      "species": {
+        "scientificNameWithoutAuthor": "Licania gracilipes",
+        "scientificNameAuthorship": "Taub.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Licania",
+          "scientificNameAuthorship": "",
+          "scientificName": "Licania"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Chrysobalanaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Chrysobalanaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Licania gracilipes Taub."
+      },
+      "gbif": {
+        "id": "2985420"
+      },
+      "powo": {
+        "id": "139775-2"
+      },
+      "iucn": {
+        "id": "226182531",
+        "category": "LC"
+      }
+    }
+  ],
+  "version": "2025-10-08 (7.4)",
+  "remainingIdentificationRequests": 499
+}

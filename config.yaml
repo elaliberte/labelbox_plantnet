@@ -44,7 +44,7 @@ folders:
 labelbox:
   # Tool name (shared across boxes and masks workflows)
   tool_name: Plant
-  tool_color: '#00ff00'
+  tool_color: '#ff6347'
 
   # Classification (shared across boxes, masks, classification)
   classification_name: Species

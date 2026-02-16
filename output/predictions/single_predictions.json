@@ -1,0 +1,206 @@
+[
+  {
+    "image": "DJI_20250405090025_0008_V_121zoom.JPG",
+    "best_match": "Unknown",
+    "results": [
+      {
+        "score": 0.01268,
+        "scientific_name": "Richeria grandis",
+        "scientific_name_author": "Richeria grandis Vahl",
+        "family": "Phyllanthaceae",
+        "genus": "Richeria",
+        "gbif_id": "3079144",
+        "powo_id": "355200-1"
+      },
+      {
+        "score": 0.00556,
+        "scientific_name": "Hymenopus heteromorphus",
+        "scientific_name_author": "Hymenopus heteromorphus (Benth.) Sothers & Prance",
+        "family": "Chrysobalanaceae",
+        "genus": "Hymenopus",
+        "gbif_id": "10451142",
+        "powo_id": "77156960-1"
+      },
+      {
+        "score": 0.00334,
+        "scientific_name": "Symmeria paniculata",
+        "scientific_name_author": "Symmeria paniculata Benth.",
+        "family": "Polygonaceae",
+        "genus": "Symmeria",
+        "gbif_id": "7291273",
+        "powo_id": "697710-1"
+      },
+      {
+        "score": 0.00189,
+        "scientific_name": "Simaba orinocensis",
+        "scientific_name_author": "Simaba orinocensis Kunth",
+        "family": "Simaroubaceae",
+        "genus": "Simaba",
+        "gbif_id": "3709147",
+        "powo_id": "814110-1"
+      },
+      {
+        "score": 0.00169,
+        "scientific_name": "Licania gracilipes",
+        "scientific_name_author": "Licania gracilipes Taub.",
+        "family": "Chrysobalanaceae",
+        "genus": "Licania",
+        "gbif_id": "2985420",
+        "powo_id": "139775-2"
+      }
+    ]
+  },
+  {
+    "image": "DJI_20250405090425_0018_V_93zoom.JPG",
+    "best_match": "Distemonanthus benthamianus Baill.",
+    "results": [
+      {
+        "score": 0.00509,
+        "scientific_name": "Pterocarpus officinalis",
+        "scientific_name_author": "Pterocarpus officinalis Jacq.",
+        "family": "Fabaceae",
+        "genus": "Pterocarpus",
+        "gbif_id": "5349333",
+        "powo_id": "214060-2"
+      },
+      {
+        "score": 0.00191,
+        "scientific_name": "Gliricidia sepium",
+        "scientific_name_author": "Gliricidia sepium (Jacq.) Kunth",
+        "family": "Fabaceae",
+        "genus": "Gliricidia",
+        "gbif_id": "8082978",
+        "powo_id": "496639-1"
+      },
+      {
+        "score": 0.00121,
+        "scientific_name": "Andira inermis",
+        "scientific_name_author": "Andira inermis (W.Wright) DC.",
+        "family": "Fabaceae",
+        "genus": "Andira",
+        "gbif_id": "2952214",
+        "powo_id": "1075415-2"
+      },
+      {
+        "score": 0.0011,
+        "scientific_name": "Andira surinamensis",
+        "scientific_name_author": "Andira surinamensis (Bondt) Splitg. ex Pulle",
+        "family": "Fabaceae",
+        "genus": "Andira",
+        "gbif_id": "2952202",
+        "powo_id": "12607-2"
+      },
+      {
+        "score": 0.00105,
+        "scientific_name": "Pterocarpus rohrii",
+        "scientific_name_author": "Pterocarpus rohrii Vahl",
+        "family": "Fabaceae",
+        "genus": "Pterocarpus",
+        "gbif_id": "5349322",
+        "powo_id": "516561-1"
+      }
+    ]
+  },
+  {
+    "image": "DJI_20250405090640_0024_V_57zoom.JPG",
+    "best_match": "Unknown",
+    "results": [
+      {
+        "score": 0.01582,
+        "scientific_name": "Couratari guianensis",
+        "scientific_name_author": "Couratari guianensis Aubl.",
+        "family": "Lecythidaceae",
+        "genus": "Couratari",
+        "gbif_id": "3083111",
+        "powo_id": "592371-1"
+      },
+      {
+        "score": 0.00453,
+        "scientific_name": "Bertholletia excelsa",
+        "scientific_name_author": "Bertholletia excelsa Bonpl.",
+        "family": "Lecythidaceae",
+        "genus": "Bertholletia",
+        "gbif_id": "3083180",
+        "powo_id": "591270-1"
+      },
+      {
+        "score": 0.00348,
+        "scientific_name": "Cariniana estrellensis",
+        "scientific_name_author": "Cariniana estrellensis (Raddi) Kuntze",
+        "family": "Lecythidaceae",
+        "genus": "Cariniana",
+        "gbif_id": "3083020",
+        "powo_id": "47516-2"
+      },
+      {
+        "score": 0.00326,
+        "scientific_name": "Hancornia speciosa",
+        "scientific_name_author": "Hancornia speciosa Gomes",
+        "family": "Apocynaceae",
+        "genus": "Hancornia",
+        "gbif_id": "3169679",
+        "powo_id": "328991-2"
+      },
+      {
+        "score": 0.00277,
+        "scientific_name": "Lecythis gracieana",
+        "scientific_name_author": "Lecythis gracieana S.A.Mori",
+        "family": "Lecythidaceae",
+        "genus": "Lecythis",
+        "gbif_id": "3082349",
+        "powo_id": "303921-2"
+      }
+    ]
+  },
+  {
+    "image": "DJI_20250405093923_0002_V_90zoom.JPG",
+    "best_match": "Unknown",
+    "results": [
+      {
+        "score": 0.02935,
+        "scientific_name": "Dialium guianense",
+        "scientific_name_author": "Dialium guianense (Aubl.) Sandwith",
+        "family": "Fabaceae",
+        "genus": "Dialium",
+        "gbif_id": "2971008",
+        "powo_id": "78900-2"
+      },
+      {
+        "score": 0.00716,
+        "scientific_name": "Hymenaea parvifolia",
+        "scientific_name_author": "Hymenaea parvifolia Huber",
+        "family": "Fabaceae",
+        "genus": "Hymenaea",
+        "gbif_id": "2950771",
+        "powo_id": "125440-2"
+      },
+      {
+        "score": 0.00508,
+        "scientific_name": "Hymenaea courbaril",
+        "scientific_name_author": "Hymenaea courbaril L.",
+        "family": "Fabaceae",
+        "genus": "Hymenaea",
+        "gbif_id": "2950750",
+        "powo_id": "125420-2"
+      },
+      {
+        "score": 0.00156,
+        "scientific_name": "Cariniana estrellensis",
+        "scientific_name_author": "Cariniana estrellensis (Raddi) Kuntze",
+        "family": "Lecythidaceae",
+        "genus": "Cariniana",
+        "gbif_id": "3083020",
+        "powo_id": "47516-2"
+      },
+      {
+        "score": 0.00153,
+        "scientific_name": "Jacaranda copaia",
+        "scientific_name_author": "Jacaranda copaia (Aubl.) D.Don",
+        "family": "Bignoniaceae",
+        "genus": "Jacaranda",
+        "gbif_id": "7298763",
+        "powo_id": "109789-1"
+      }
+    ]
+  }
+]

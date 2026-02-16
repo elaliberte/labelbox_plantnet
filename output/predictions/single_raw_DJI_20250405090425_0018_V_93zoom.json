@@ -1,0 +1,186 @@
+{
+  "query": {
+    "project": "xprize-final-trees",
+    "images": [
+      "7696166d27ae6b912dc5ac6ae8bc701e"
+    ],
+    "organs": [
+      "auto"
+    ],
+    "includeRelatedImages": false,
+    "noReject": true,
+    "type": null
+  },
+  "predictedOrgans": [
+    {
+      "image": "7696166d27ae6b912dc5ac6ae8bc701e",
+      "filename": "DJI_20250405090425_0018_V_93zoom.JPG",
+      "organ": "aerial",
+      "score": 0.74489
+    }
+  ],
+  "language": "en",
+  "switchToProject": "k-world-flora",
+  "bestMatch": "Distemonanthus benthamianus Baill.",
+  "results": [
+    {
+      "score": 0.00509,
+      "species": {
+        "scientificNameWithoutAuthor": "Pterocarpus officinalis",
+        "scientificNameAuthorship": "Jacq.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Pterocarpus",
+          "scientificNameAuthorship": "",
+          "scientificName": "Pterocarpus"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [
+          "Bois mang",
+          "Swamp bloodwood",
+          "Dragon's-Blood-Tree"
+        ],
+        "scientificName": "Pterocarpus officinalis Jacq."
+      },
+      "gbif": {
+        "id": "5349333"
+      },
+      "powo": {
+        "id": "214060-2"
+      },
+      "iucn": {
+        "id": "62027812",
+        "category": "NT"
+      }
+    },
+    {
+      "score": 0.00191,
+      "species": {
+        "scientificNameWithoutAuthor": "Gliricidia sepium",
+        "scientificNameAuthorship": "(Jacq.) Kunth",
+        "genus": {
+          "scientificNameWithoutAuthor": "Gliricidia",
+          "scientificNameAuthorship": "",
+          "scientificName": "Gliricidia"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [
+          "Quick-stick",
+          "Nicaraguan cocoashade",
+          "Nicaraguan cocoa shade tree"
+        ],
+        "scientificName": "Gliricidia sepium (Jacq.) Kunth"
+      },
+      "gbif": {
+        "id": "8082978"
+      },
+      "powo": {
+        "id": "496639-1"
+      },
+      "iucn": {
+        "id": "136055124",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00121,
+      "species": {
+        "scientificNameWithoutAuthor": "Andira inermis",
+        "scientificNameAuthorship": "(W.Wright) DC.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Andira",
+          "scientificNameAuthorship": "",
+          "scientificName": "Andira"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [
+          "Cabbagebark Tree",
+          "Angelin",
+          "Angelin-tree"
+        ],
+        "scientificName": "Andira inermis (W.Wright) DC."
+      },
+      "gbif": {
+        "id": "2952214"
+      },
+      "powo": {
+        "id": "1075415-2"
+      },
+      "iucn": {
+        "id": "60761659",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.0011,
+      "species": {
+        "scientificNameWithoutAuthor": "Andira surinamensis",
+        "scientificNameAuthorship": "(Bondt) Splitg. ex Pulle",
+        "genus": {
+          "scientificNameWithoutAuthor": "Andira",
+          "scientificNameAuthorship": "",
+          "scientificName": "Andira"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Andira surinamensis (Bondt) Splitg. ex Pulle"
+      },
+      "gbif": {
+        "id": "2952202"
+      },
+      "powo": {
+        "id": "12607-2"
+      },
+      "iucn": {
+        "id": "144275633",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00105,
+      "species": {
+        "scientificNameWithoutAuthor": "Pterocarpus rohrii",
+        "scientificNameAuthorship": "Vahl",
+        "genus": {
+          "scientificNameWithoutAuthor": "Pterocarpus",
+          "scientificNameAuthorship": "",
+          "scientificName": "Pterocarpus"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Pterocarpus rohrii Vahl"
+      },
+      "gbif": {
+        "id": "5349322"
+      },
+      "powo": {
+        "id": "516561-1"
+      },
+      "iucn": {
+        "id": "62027821",
+        "category": "LC"
+      }
+    }
+  ],
+  "version": "2025-10-08 (7.4)",
+  "remainingIdentificationRequests": 498
+}

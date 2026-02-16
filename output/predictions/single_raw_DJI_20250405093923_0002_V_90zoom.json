@@ -1,0 +1,177 @@
+{
+  "query": {
+    "project": "xprize-final-trees",
+    "images": [
+      "5a306028b232be3d236545824aadeec8"
+    ],
+    "organs": [
+      "auto"
+    ],
+    "includeRelatedImages": false,
+    "noReject": true,
+    "type": null
+  },
+  "predictedOrgans": [
+    {
+      "image": "5a306028b232be3d236545824aadeec8",
+      "filename": "DJI_20250405093923_0002_V_90zoom.JPG",
+      "organ": "fruit",
+      "score": 0.36404
+    }
+  ],
+  "language": "en",
+  "preferedReferential": "xprize-final-trees",
+  "results": [
+    {
+      "score": 0.02935,
+      "species": {
+        "scientificNameWithoutAuthor": "Dialium guianense",
+        "scientificNameAuthorship": "(Aubl.) Sandwith",
+        "genus": {
+          "scientificNameWithoutAuthor": "Dialium",
+          "scientificNameAuthorship": "",
+          "scientificName": "Dialium"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [
+          "Ironwood"
+        ],
+        "scientificName": "Dialium guianense (Aubl.) Sandwith"
+      },
+      "gbif": {
+        "id": "2971008"
+      },
+      "powo": {
+        "id": "78900-2"
+      },
+      "iucn": {
+        "id": "62023187",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00716,
+      "species": {
+        "scientificNameWithoutAuthor": "Hymenaea parvifolia",
+        "scientificNameAuthorship": "Huber",
+        "genus": {
+          "scientificNameWithoutAuthor": "Hymenaea",
+          "scientificNameAuthorship": "",
+          "scientificName": "Hymenaea"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Hymenaea parvifolia Huber"
+      },
+      "gbif": {
+        "id": "2950771"
+      },
+      "powo": {
+        "id": "125440-2"
+      },
+      "iucn": {
+        "id": "19891864",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00508,
+      "species": {
+        "scientificNameWithoutAuthor": "Hymenaea courbaril",
+        "scientificNameAuthorship": "L.",
+        "genus": {
+          "scientificNameWithoutAuthor": "Hymenaea",
+          "scientificNameAuthorship": "",
+          "scientificName": "Hymenaea"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Fabaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Fabaceae"
+        },
+        "commonNames": [
+          "Brazilian copal",
+          "South American-locust",
+          "Amami-gum"
+        ],
+        "scientificName": "Hymenaea courbaril L."
+      },
+      "gbif": {
+        "id": "2950750"
+      },
+      "powo": {
+        "id": "125420-2"
+      },
+      "iucn": {
+        "id": "19891869",
+        "category": "LC"
+      }
+    },
+    {
+      "score": 0.00156,
+      "species": {
+        "scientificNameWithoutAuthor": "Cariniana estrellensis",
+        "scientificNameAuthorship": "(Raddi) Kuntze",
+        "genus": {
+          "scientificNameWithoutAuthor": "Cariniana",
+          "scientificNameAuthorship": "",
+          "scientificName": "Cariniana"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Lecythidaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Lecythidaceae"
+        },
+        "commonNames": [
+          "Plains Oak"
+        ],
+        "scientificName": "Cariniana estrellensis (Raddi) Kuntze"
+      },
+      "gbif": {
+        "id": "3083020"
+      },
+      "powo": {
+        "id": "47516-2"
+      }
+    },
+    {
+      "score": 0.00153,
+      "species": {
+        "scientificNameWithoutAuthor": "Jacaranda copaia",
+        "scientificNameAuthorship": "(Aubl.) D.Don",
+        "genus": {
+          "scientificNameWithoutAuthor": "Jacaranda",
+          "scientificNameAuthorship": "",
+          "scientificName": "Jacaranda"
+        },
+        "family": {
+          "scientificNameWithoutAuthor": "Bignoniaceae",
+          "scientificNameAuthorship": "",
+          "scientificName": "Bignoniaceae"
+        },
+        "commonNames": [],
+        "scientificName": "Jacaranda copaia (Aubl.) D.Don"
+      },
+      "gbif": {
+        "id": "7298763"
+      },
+      "powo": {
+        "id": "109789-1"
+      },
+      "iucn": {
+        "id": "61985587",
+        "category": "LC"
+      }
+    }
+  ],
+  "version": "2025-10-08 (7.4)",
+  "remainingIdentificationRequests": 496
+}

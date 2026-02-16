@@ -1,0 +1,13 @@
+{
+  "model_name": "Pl@ntNet Survey - Segmentation",
+  "model_id": "a9af8c95-883f-0179-6591-c5aadafe2a60",
+  "model_run_name": "run_2026-02-16_stride259_multiscale",
+  "model_run_id": "a9af8c96-805a-0388-74bb-bc45c8966092",
+  "confidence_threshold": 0.05,
+  "images_processed": 4,
+  "total_mask_annotations": 16,
+  "composite_masks_dir": "c:\\Users\\etien\\OneDrive\\Documents\\projets\\labelbox_plantnet\\output/masks\\composite_masks",
+  "upload_success": 16,
+  "upload_failure": 0,
+  "timestamp": "2026-02-16T14:45:29.537228"
+}
