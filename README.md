@@ -360,6 +360,7 @@ labelbox_plantnet/
     ├── species/              # species_raw.json, species_list.csv
     ├── images/               # dataset_id.txt, upload_summary.json
     ├── predictions/          # single_predictions.json, multi_predictions.json
+    ├── embeddings/           # BioCLIP2 embeddings
     ├── class/                # ontology_id.txt, project_id.txt, model_run_id.txt
     ├── boxes/                # ontology_id.txt, project_id.txt, model_run_id.txt
     └── masks/                # ontology_id.txt, project_id.txt, model_run_id.txt, composite_masks/

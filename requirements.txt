@@ -3,3 +3,5 @@ requests
 python-dotenv
 Pillow
 pyyaml
+open_clip_torch
+timm
