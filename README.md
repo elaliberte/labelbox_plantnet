@@ -1,5 +1,7 @@
 # 🌿 Labelbox × Pl\@ntNet — Brazilian Amazon Trees
 
+> 🎬 **Watch the demo of each workflow by clicking on its thumbnail!**
+
 <table>
   <tr>
     <th align="center">Classification</th>
@@ -7,9 +9,26 @@
     <th align="center">Masks</th>
   </tr>
   <tr>
-    <td align="center"><img src="media/class.jpg" alt="Classification" width="300"/></td>
-    <td align="center"><img src="media/boxes.jpg" alt="Boxes" width="300"/></td>
-    <td align="center"><img src="media/masks.jpg" alt="Masks" width="300"/></td>
+    <td align="center">
+      <a href="https://youtu.be/p19GFmV2bnA" target="_blank">
+        <img src="media/class.jpg" alt="Classification" width="300"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://youtu.be/sh1AkQxR9fE?si=nk8sy8tv-42oqY6W" target="_blank">
+        <img src="media/boxes.jpg" alt="Boxes" width="300"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://youtu.be/2xzv3xA8wrw" target="_blank">
+        <img src="media/masks.jpg" alt="Masks" width="300"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>▶️ Click to watch</em></td>
+    <td align="center"><em>▶️ Click to watch</em></td>
+    <td align="center"><em>▶️ Click to watch</em></td>
   </tr>
 </table>
 
@@ -24,8 +43,6 @@ Three annotation workflows are demonstrated:
 | 🎭 **Masks** | `RASTER_SEGMENTATION` + nested Radio | ⚠️ Confidence stored but UI filter broken | `scripts/04c_masks/` |
 
 Pl\@ntNet micro-project used: [Trees of the Brazilian Amazon](https://identify.plantnet.org/xprize-final-trees/species) (\~2 464 taxa).
-
-[![Watch the demo of the bounding box workflow!](media/video.jpg)](https://youtu.be/sh1AkQxR9fE?si=nk8sy8tv-42oqY6W)
 
 ------------------------------------------------------------------------
 
