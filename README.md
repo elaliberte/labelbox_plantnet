@@ -26,11 +26,12 @@
     </td>
   </tr>
   <tr>
-    <td align="center"><em>▶️ Click to watch</em></td>
-    <td align="center"><em>▶️ Click to watch</em></td>
-    <td align="center"><em>▶️ Click to watch</em></td>
+    <td align="center"><a href="https://youtu.be/p19GFmV2bnA" target="_blank"><em>▶️ Click to watch</em></a></td>
+    <td align="center"><a href="https://youtu.be/sh1AkQxR9fE?si=nk8sy8tv-42oqY6W" target="_blank"><em>▶️ Click to watch</em></a></td>
+    <td align="center"><a href="https://youtu.be/2xzv3xA8wrw" target="_blank"><em>▶️ Click to watch</em></a></td>
   </tr>
 </table>
+
 
 Integrating [Pl\@ntNet](https://plantnet.org) multi-species predictions with [Labelbox](https://labelbox.com) for model-assisted labelling of ultra high-resolution drone close-up photos of tropical trees (Brazilian Amazon).
 
