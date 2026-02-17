@@ -1,0 +1,12 @@
+{
+  "embedding_name": "BioCLIP2",
+  "embedding_id": "c0xuh8tlg073000rbmlr27gas",
+  "embedding_dims": 768,
+  "model": "BioCLIP2 (ViT-L/14, imageomics/bioclip-2)",
+  "device": "cpu",
+  "images_processed": 4,
+  "embeddings_uploaded": 4,
+  "skipped": 0,
+  "imported_vector_count": 4,
+  "timestamp": "2026-02-17T15:32:39.071825"
+}

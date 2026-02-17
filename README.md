@@ -284,6 +284,22 @@ python scripts/04c_masks/06_import_predictions.py
 
 ------------------------------------------------------------------------
 
+### 🧬 Step 5 — Generate and upload BioCLIP2 embeddings (optional)
+
+Generates [BioCLIP2](https://huggingface.co/imageomics/bioclip-2) image embeddings (768-dimensional vectors from a ViT-L/14 model trained on 214M biology images) and uploads them to Labelbox as custom embeddings. This enables **biological similarity search** in Labelbox Catalog — find images of similar-looking tree canopies in one click.
+
+> ℹ️ BioCLIP2 runs on CPU for small datasets. No GPU required for the demo images.
+
+> ℹ️ Labelbox similarity search works best with ≥1,000 data rows. With fewer images, embeddings are stored but search may be limited.
+
+```bash
+python scripts/05_embeddings/07_upload_embeddings.py
+```
+
+**Output:** `output/embeddings/embeddings.json`, `output/embeddings/embeddings_summary.json`
+
+------------------------------------------------------------------------
+
 ## 🏗️ Project structure
 
 ```         
@@ -316,10 +332,12 @@ labelbox_plantnet/
 │   │   ├── 04_create_ontology.py
 │   │   ├── 05_create_project.py
 │   │   └── 06_import_predictions.py
-│   └── 04c_masks/            # Segmentation mask workflow
-│       ├── 04_create_ontology.py
-│       ├── 05_create_project.py
-│       └── 06_import_predictions.py
+│   ├── 04c_masks/            # Segmentation mask workflow
+│   │   ├── 04_create_ontology.py
+│   │   ├── 05_create_project.py
+│   │   └── 06_import_predictions.py
+│   └── 05_embeddings/            # Generate embeddings
+│       └── 07_upload_embeddings.py
 └── output/                   # Generated files
     ├── species/              # species_raw.json, species_list.csv
     ├── images/               # dataset_id.txt, upload_summary.json
@@ -352,3 +370,7 @@ labelbox_plantnet/
 -   [Labelbox — Active learning](https://docs.labelbox.com/docs/active-learning)
 
 -   [Labelbox — Limits (4K classes)](https://docs.labelbox.com/docs/limits)
+
+-   [Labelbox — Custom embeddings](https://docs.labelbox.com/reference/custom-embeddings)
+
+-   [Labelbox — Similarity search](https://docs.labelbox.com/docs/similarity)

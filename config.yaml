@@ -39,6 +39,7 @@ folders:
   output_class: output/class
   output_masks: output/masks
   output_images: output/images
+  output_embeddings: output/embeddings
 
 # ─── Labelbox ────────────────────────────────────────────────────
 labelbox:
@@ -100,3 +101,7 @@ labelbox:
     of Brazilian Amazon trees. Project: xprize-final-trees.
     Predictions imported as segmentation masks with nested species radio.
   model_run_name_masks: run_2026-02-16_stride259_multiscale
+
+  # Embeddings (Step 5)
+  embedding_name: BioCLIP2
+  embedding_dims: 768
