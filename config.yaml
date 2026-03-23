@@ -29,7 +29,6 @@ plantnet:
     show_species: true
     show_genus: false
     show_family: false
-    show_embeddings: false  # set to true in 07_upload_embeddings.py (overrides this)
 
 # ─── Folders ─────────────────────────────────────────────────────
 folders:

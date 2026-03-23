@@ -6,9 +6,13 @@ This script:
 2. Estimates cost via /v2/cost/survey endpoint
 3. Sends each image to the Pl@ntNet survey/tiles endpoint
 4. Saves raw API responses and a summary JSON to output/predictions/
+5. Extracts per-tile embeddings, mean-pools them, and saves to output/embeddings/
 
 Each image is tiled and analyzed for multiple species.
-Results include per-tile bounding box positions and confidence scores.
+Results include per-tile bounding box positions, confidence scores, and
+768-dim embedding vectors (mean-pooled across all tiles per image).
+
+Embeddings and predictions come from the same API call, ensuring consistency.
 
 API docs: https://my.plantnet.org/doc/api/survey
 """
@@ -16,6 +20,7 @@ API docs: https://my.plantnet.org/doc/api/survey
 import os
 import sys
 import json
+import math
 import time
 import yaml
 import requests
@@ -46,6 +51,8 @@ with open(config_path, "r", encoding="utf-8") as f:
 
 IMAGES_DIR = os.path.join(PROJECT_ROOT, config["folders"]["images"])
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, config["folders"]["output_predictions"])
+EMBEDDINGS_DIR = os.path.join(PROJECT_ROOT, config["folders"]["output_embeddings"])
+os.makedirs(EMBEDDINGS_DIR, exist_ok=True)
 
 API_BASE = config["plantnet"]["api_base"]
 PROJECT = config["plantnet"]["project"]
@@ -60,6 +67,8 @@ MAX_RANK = survey_cfg.get("max_rank", 1)
 SHOW_SPECIES = survey_cfg.get("show_species", True)
 SHOW_GENUS = survey_cfg.get("show_genus", False)
 SHOW_FAMILY = survey_cfg.get("show_family", False)
+GLOBAL_KEY_PREFIX = config["labelbox"]["global_key_prefix"]
+EMBEDDING_DIMS = config["labelbox"]["embedding_dims"]
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -81,6 +90,8 @@ print(f"Parameters: tile_size={TILE_SIZE}, tile_stride={TILE_STRIDE}, "
 
 # ─── Process each image ─────────────────────────────────────────
 all_predictions = []
+all_embeddings = []
+plantnet_version = None
 MAX_RETRIES = 3
 
 for i, img_filename in enumerate(image_files, 1):
@@ -134,6 +145,7 @@ for i, img_filename in enumerate(image_files, 1):
         "show_species": str(SHOW_SPECIES).lower(),
         "show_genus": str(SHOW_GENUS).lower(),
         "show_family": str(SHOW_FAMILY).lower(),
+        "show_embeddings": "true",
     }
 
     response = None
@@ -177,6 +189,10 @@ for i, img_filename in enumerate(image_files, 1):
     raw_path = os.path.join(OUTPUT_DIR, f"multi_raw_{Path(img_filename).stem}.json")
     with open(raw_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+    # Extract model version from first successful response
+    if plantnet_version is None:
+        plantnet_version = data.get("version", "unknown")
 
     # Parse results
     results = data.get("results", {})
@@ -245,6 +261,30 @@ for i, img_filename in enumerate(image_files, 1):
 
     all_predictions.append(prediction)
 
+    # ─── Extract and pool embeddings ─────────────────────────────
+    tile_embeddings = results.get("embeddings")
+    if tile_embeddings:
+        n_tiles = len(tile_embeddings)
+        dims = len(tile_embeddings[0]["embeddings"])
+        mean_vec = [0.0] * dims
+        for tile in tile_embeddings:
+            for j, v in enumerate(tile["embeddings"]):
+                mean_vec[j] += v
+        mean_vec = [v / n_tiles for v in mean_vec]
+        norm = math.sqrt(sum(v * v for v in mean_vec))
+        if norm > 0:
+            mean_vec = [v / norm for v in mean_vec]
+        all_embeddings.append({
+            "filename": img_filename,
+            "global_key": f"{GLOBAL_KEY_PREFIX}{img_filename}",
+            "embedding": mean_vec,
+            "n_tiles": n_tiles,
+            "plantnet_version": plantnet_version,
+        })
+        print(f"  Embedding: {n_tiles} tiles -> {dims}-dim vector")
+    else:
+        print(f"  WARNING: no embeddings in response for {img_filename}")
+
     # Be polite to the API (survey is heavier)
     if i < len(image_files):
         time.sleep(2)
@@ -254,10 +294,18 @@ summary_path = os.path.join(OUTPUT_DIR, "multi_predictions.json")
 with open(summary_path, "w", encoding="utf-8") as f:
     json.dump(all_predictions, f, indent=2, ensure_ascii=False)
 
+# ─── Save embeddings ────────────────────────────────────────────
+embeddings_path = os.path.join(EMBEDDINGS_DIR, "embeddings.json")
+with open(embeddings_path, "w", encoding="utf-8") as f:
+    json.dump(all_embeddings, f, ensure_ascii=False)
+
 print(f"\n{'='*50}")
 print(f"MULTI-SPECIES PREDICTIONS COMPLETE")
 print(f"{'='*50}")
 print(f"Images processed: {len(all_predictions)}/{len(image_files)}")
 print(f"Results saved to: {summary_path}")
 print(f"Raw responses in: {OUTPUT_DIR}/multi_raw_*.json")
+print(f"Embeddings saved: {embeddings_path} ({len(all_embeddings)} images)")
+print(f"Pl@ntNet version: {plantnet_version}")
 print(f"{'='*50}")
+print(f"Next: run scripts/05_embeddings/07_upload_embeddings.py to upload embeddings to Labelbox.")

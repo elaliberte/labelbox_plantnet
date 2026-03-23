@@ -1,4 +1,5 @@
 labelbox
 requests
 python-dotenv
+Pillow
 pyyaml
