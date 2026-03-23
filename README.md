@@ -302,13 +302,17 @@ python scripts/04c_masks/06_import_predictions.py
 
 ------------------------------------------------------------------------
 
-### 🧬 Step 5 — Generate and upload BioCLIP2 embeddings (optional)
+### 🧬 Step 5 — Generate and upload Pl\@ntNet embeddings (optional)
 
-Generates [BioCLIP2](https://huggingface.co/imageomics/bioclip-2) image embeddings (768-dimensional vectors from a ViT-L/14 model trained on 214M biology images) and uploads them to Labelbox as custom embeddings. This enables **biological similarity search** in Labelbox Catalog — find images of similar-looking tree canopies in one click.
+Generates image embeddings from the **Pl\@ntNet multi-species survey endpoint** and uploads them to Labelbox as custom embeddings. This enables **visual similarity search** in Labelbox Catalog — find images containing similar species compositions in one click.
 
-> ℹ️ BioCLIP2 runs on CPU for small datasets. No GPU required for the demo images.
+**How it works:** the same `/v2/survey/tiles` endpoint used for species predictions also returns a 768-dimensional embedding vector for each image tile. These per-tile embeddings are **mean-pooled** across all tiles and L2-normalized into a single 768-dim vector per image. Mean pooling captures the full ecological composition of the image — including multiple tree species, lianas, and epiphytes — rather than just the dominant species.
 
-> ℹ️ Labelbox similarity search works best with ≥1,000 data rows. With fewer images, embeddings are stored but search may be limited.
+**Why Pl\@ntNet embeddings?** Unlike a generic vision model, Pl\@ntNet's embedding space is shaped by plant identification training, so visually similar bark textures, leaf arrangements, and canopy structures land near each other — even for species not yet well-represented in the training set. No local model or GPU is required: everything runs via the API.
+
+**Embedding versioning:** the Labelbox embedding type is named automatically from the Pl\@ntNet model version string in the API response (e.g. `PlantNet-v7.4-2026-03`), making it easy to track improvements across Pl\@ntNet retraining cycles (~every two months).
+
+> ℹ️ Labelbox similarity search works best with ≥1,000 data rows. With fewer images, embeddings are stored but search results will be limited.
 
 ```bash
 python scripts/05_embeddings/07_upload_embeddings.py
@@ -360,7 +364,7 @@ labelbox_plantnet/
     ├── species/              # species_raw.json, species_list.csv
     ├── images/               # dataset_id.txt, upload_summary.json
     ├── predictions/          # single_predictions.json, multi_predictions.json
-    ├── embeddings/           # BioCLIP2 embeddings
+    ├── embeddings/           # Pl@ntNet embeddings
     ├── class/                # ontology_id.txt, project_id.txt, model_run_id.txt
     ├── boxes/                # ontology_id.txt, project_id.txt, model_run_id.txt
     └── masks/                # ontology_id.txt, project_id.txt, model_run_id.txt, composite_masks/
