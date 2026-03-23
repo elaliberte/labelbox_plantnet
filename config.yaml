@@ -29,6 +29,7 @@ plantnet:
     show_species: true
     show_genus: false
     show_family: false
+    show_embeddings: false  # set to true in 07_upload_embeddings.py (overrides this)
 
 # ─── Folders ─────────────────────────────────────────────────────
 folders:
@@ -103,5 +104,6 @@ labelbox:
   model_run_name_masks: run_2026-02-16_stride259_multiscale
 
   # Embeddings (Step 5)
-  embedding_name: BioCLIP2
+  # embedding_name is built dynamically at runtime: PlantNet-v{version}-{YYYY-MM}
+  # e.g. "PlantNet-v7.3-2026-03" — encodes model version and run month
   embedding_dims: 768
